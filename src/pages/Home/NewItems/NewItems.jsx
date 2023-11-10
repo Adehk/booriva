@@ -44,8 +44,8 @@ const NewItems = () => {
         <p className={styles.title}>НОВИНКИ</p>
       </div>
       <div className={styles.cards}>
-        {products.map(({ image, name, price }) => (
-          <ProductCard image={image} name={name} price={price} />
+        {products.map(({ id, image, name, price }) => (
+          <ProductCard image={image} name={name} price={price} key={id} />
         ))}
       </div>
       <Link to="/newitems" className={styles.svgButton}>

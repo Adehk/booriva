@@ -4,18 +4,23 @@
     display: flex
     align-items: center
     justify-content: space-between
-  .link
-    display: block
-    color: var(--umbra)
-    font-size: 14px
-    font-weight: var(--semibold-fw)
-    text-transform: uppercase
-    transition: all 0.3s ease
-    @media (min-width: 768px)
-      padding: 12.5px 0 15px
-      font-size: 16px
-    &:hover
-      color: var(--taffy-pink)
+
+.link
+  display: block
+  color: var(--umbra)
+  font-size: 14px
+  font-weight: var(--semibold-fw)
+  text-transform: uppercase
+  transition: all 0.3s ease
+  @media (min-width: 768px)
+    padding: 12.5px 0 15px
+    font-size: 16px
+  &:hover
+    color: var(--taffy-pink)
+
+.active
+  color: var(--taffy-pink)
+  font-style: italic
 
 .submenu
   background-color: var(--white)

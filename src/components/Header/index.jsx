@@ -7,7 +7,12 @@ import Menu from "./Menu/Menu";
 
 import styles from "./index.module.sass";
 
-const Header = () => {
+const Header = ({
+  activeMenuItem,
+  setActiveMenuItem,
+  activeSubmenuItem,
+  setActiveSubmenuItem,
+}) => {
   return (
     <div className={styles.header}>
       <div className={styles.headerContent}>
@@ -22,7 +27,12 @@ const Header = () => {
             </div>
           </div>
           <div className={styles.bottomRow}>
-            <Menu />
+            <Menu
+              activeMenuItem={activeMenuItem}
+              setActiveMenuItem={setActiveMenuItem}
+              activeSubmenuItem={activeSubmenuItem}
+              setActiveSubMenuItem={setActiveSubmenuItem}
+            />
           </div>
         </div>
       </div>
