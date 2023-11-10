@@ -1,0 +1,38 @@
+.search
+  cursor: pointer
+  @media (min-width: 768px)
+    display: flex
+    align-items: center
+    gap: 10px
+  @media (min-width: 1000px)
+    gap: 8px
+  @media (min-width: 1440px)
+    gap: 16px
+  svg
+    width: 16px
+    height: 16px
+    @media (min-width: 480px)
+      width: 24px
+      height: 24px
+    @media (min-width: 768px)
+      width: 20px
+      height: 20px
+    @media (min-width: 1440px)
+      width: 24px
+      height: 24px
+  input
+    display: none
+    @media (min-width: 768px)
+      display: block
+      color: var(--black)
+      font-family: var(--primary-ff)
+      font-size: 11px
+      font-weight: var(--bold-fw)
+      border: none
+      width: 40px
+    @media (min-width: 1440px)
+      font-size: 12px
+    &::placeholder
+      color: var(--black)
+    &:focus
+      outline: none

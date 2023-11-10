@@ -1,0 +1,110 @@
+.newItems
+  display: flex
+  flex-direction: column
+  align-items: start
+  gap: 15px
+  padding: 0 15px 40px
+  @media (min-width: 480px)
+    padding: 0 15px 50px
+  @media (min-width: 768px)
+    gap: 25px
+    padding: 0 10px 50px
+  @media (min-width: 1000px)
+    padding: 0 0 60px
+  @media (min-width: 1440px)
+    max-width: 1440px
+    margin: 0 auto
+
+.cards
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  @media (min-width: 768px)
+    grid-template-columns: repeat(3, 1fr)
+  @media (min-width: 1000px)
+    grid-template-columns: repeat(4, 1fr)
+
+.heading
+  @media (min-width: 1000px)
+    width: 900px
+    margin: 0 auto
+  @media (min-width: 1440px)
+    width: 1140px
+
+.shadow
+  color: var(--taffy-pink)
+  font-family: var(--secondary-ff)
+  font-size: 26px
+  font-weight: var(--regular-fw)
+  @media (min-width: 480px)
+    font-size: 36px
+  @media (min-width: 768px)
+    font-size: 54px
+
+.title
+  color: var(--umbra)
+  font-size: 14px
+  font-weight: var(--semibold-fw)
+  text-transform: uppercase
+  margin-top: -18.5px
+  margin-left: -0.1px
+  position: relative
+  overflow: hidden
+  @media (min-width: 480px)
+    font-size: 16px
+    margin-top: -22px
+  @media (min-width: 768px)
+    font-size: 25px
+    margin-top: -33px
+  &::after
+    position: absolute
+    content: ''
+    background: url(../../../assets/icons/wavyline.svg) no-repeat
+    background-size: 25px
+    width: 100%
+    height: 100%
+    top: 5px
+    left: 82px
+    @media (min-width: 480px)
+      background-size: 37px
+      top: 6px
+      left: 98px
+    @media (min-width: 768px)
+      background-size: 65px
+      left: 156px
+
+.svgButton
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  align-items: center
+  transition: all 0.3s ease
+  align-self: center
+  
+.svgButton svg
+  @media (min-width: 768px)
+    width: 180px
+    height: 50px
+
+.svgButton svg path
+  fill: var(--taffy-pink)
+
+.svgButton:active svg path
+  fill: var(--red)
+
+.buttonText
+  color: var(--white)
+  font-family: var(--secondary-ff)
+  font-size: 12px
+  position: absolute
+  top: 45%
+  left: 48%
+  transform: translate(-50%, -50%)
+  @media (min-width: 480px)
+    left: 49%
+  @media (min-width: 768px)
+    font-size: 14px
+    top: 43%
+    left: 49.5%
+  @media (min-width:1440px)
+    left: 48%

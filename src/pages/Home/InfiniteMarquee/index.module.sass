@@ -1,0 +1,51 @@
+.infiniteMarquee
+  display: flex
+  overflow: hidden
+  width: 100%
+  white-space: nowrap
+  justify-content: flex-start
+  -webkit-box-align: center
+  align-items: center
+  background: var(--taffy-pink)
+  height: 60px
+  margin-top: 40px
+  @media (min-width: 768px)
+    height: 80px
+
+.track
+  position: relative
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  white-space: nowrap
+  will-change: transform
+  animation: marquee 20s linear infinite
+  background: var(--taffy-pink)
+  border-top: 2px solid var(--red)
+  border-bottom: 2px solid var(--red)
+  height: 40px
+  @media (min-width: 768px)
+    height: 60px
+
+.text
+  color: var(--red)
+  font-size: 16px
+  font-weight: var(--semibold-fw)
+  text-transform: uppercase
+  -webkit-text-size-adjust: 100%
+  -webkit-box-direction: normal
+  white-space: nowrap
+  -webkit-box-flex: 0
+  flex: 0 0 auto
+  padding: 0 45px
+  @media (min-width: 768px)
+    font-size: 25px
+  @media (min-width: 1000px)
+    padding: 0 75px
+
+@keyframes marquee
+  from
+    transform: translateX(0)
+
+  to
+    transform: translateX(-50%)

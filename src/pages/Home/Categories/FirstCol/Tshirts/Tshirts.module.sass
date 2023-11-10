@@ -1,0 +1,75 @@
+.tShirts
+  background: url('../../../../../assets/images/tshirts.jpg') no-repeat
+  background-size: cover
+  grid-column: 1 / 2
+  grid-row: 1 / 3
+  height: 230px
+  position: relative
+  @media (min-width: 480px)
+    height: 365px
+  @media (min-width: 768px)
+    grid-column: 1 / 3
+    grid-row: 1 / 2
+    height: 225px
+    background-position: center
+  @media (min-width: 1000px)
+    height: 275px
+  @media (min-width: 1440px)
+    height: 345px
+
+.btnWrapper
+  position: absolute
+  left: 7px
+  bottom: 48px
+  @media (min-width: 480px)
+    left: 21px
+    bottom: 22px
+  @media (min-width: 768px)
+    left: 12px
+    bottom: 14px
+  @media (min-width: 1000px)
+    left: 5px
+    bottom: 15px
+    transform: rotate(0.5deg)
+  @media (min-width: 1440px)
+    left: 22px
+    bottom: 20px
+
+.svgButton
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: all 0.3s ease
+
+.svgButton svg
+  width: 120px
+  height: 35px
+  @media (min-width: 768px)
+    width: 170px
+    height: 45px
+  @media (min-width: 1000px)
+    width: 204px
+    height: 51px
+  @media (min-width: 1440px)
+    width: 205px
+    height: 51px
+
+.svgButton svg path
+  fill: var(--taffy-pink)
+
+.svgButton:active svg path
+  fill: var(--red)
+
+.buttonText
+  color: var(--white)
+  font-family: var(--secondary-ff)
+  font-size: 12px
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  @media (min-width: 768px)
+    font-size: 16px
+  @media (min-width:1000px)
+    font-size: 20px

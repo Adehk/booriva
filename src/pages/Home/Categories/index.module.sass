@@ -1,0 +1,20 @@
+.categories
+  padding: 45px 15px 40px
+  font-family: 'Sunday Best', sans-serif
+  display: grid
+  grid-template-columns: 1fr
+  gap: 4px
+  @media (min-width: 480px)
+    padding: 65px 15px 50px
+    gap: 8px
+  @media (min-width: 768px)
+    padding: 130px 15px 50px
+    gap: 10px
+    grid-template-columns: repeat(2, 1fr)
+  @media (min-width: 1000px)
+    padding: 130px 50px 60px
+  @media (min-width: 1440px)
+    padding: 130px 0 60px
+    max-width: 1145px
+    margin: 0 auto
+    gap: 15px

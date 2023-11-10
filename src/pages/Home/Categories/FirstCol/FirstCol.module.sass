@@ -1,0 +1,11 @@
+.firstCol
+  display: grid
+  grid-template-columns: 1.6fr 1fr
+  gap: 4px
+  @media (min-width: 480px)
+    gap: 8px
+  @media (min-width: 768px)
+    grid-template-columns: repeat(2, auto)
+    gap: 10px
+  @media (min-width: 1440px)
+    gap: 15px

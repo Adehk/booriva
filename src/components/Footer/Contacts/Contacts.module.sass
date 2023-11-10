@@ -1,0 +1,37 @@
+.title
+  color: var(--red)
+  font-family: var(--secondary-ff)
+  font-size: 10px
+  font-weight: var(--regular-fw)
+  letter-spacing: 1px
+  margin-bottom: 15px
+  @media (min-width: 768px)
+    font-size: 12px
+    margin-bottom: 18px
+  @media (min-width: 1000px)
+    margin-bottom: 15px
+    display: none
+
+.list
+  display: flex
+  flex-direction: column
+  gap: 10px
+
+.item
+  display: block
+  @media (min-width: 1000px)
+    display: none
+
+li
+  white-space: normal
+  @media (min-width: 1000px)
+    white-space: nowrap
+
+span
+  white-space: nowrap
+  @media (min-width: 1000px)
+
+.hidden
+  display: none
+  @media (min-width: 1000px)
+    display: block

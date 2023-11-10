@@ -1,0 +1,74 @@
+.bottoms
+  background: url('../../../../../assets/images/bottom.jpg') no-repeat
+  background-size: cover
+  grid-column: 2 / 3
+  grid-row: 2 / 3
+  position: relative
+  @media (min-width: 768px)
+    grid-column: 1 / 1
+    grid-row: 2 / 3
+    height: 195px
+    background-position: center
+  @media (min-width: 1000px)
+    height: 235px
+  @media (min-width: 1440px)
+    height: 295px
+
+.btnWrapper
+  position: absolute
+  left: 48px
+  bottom: 20px
+  transform: rotate(-44.215deg)
+  @media (min-width: 480px)
+    left: 85px
+    bottom: 25px
+    transform: rotate(-48.751deg)
+  @media (min-width: 768px)
+    left: 90px
+    bottom: 30px
+    transform: rotate(-53.88deg)
+  @media (min-width: 1000px)
+    left: 120px
+    bottom: 30px
+  @media (min-width: 1440px)
+    left: 155px
+    bottom: 45px
+    transform: rotate(-48.463deg)
+
+.svgButton
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: all 0.3s ease
+
+.svgButton svg
+  width: 60px
+  height: 35px
+  @media (min-width: 480px)
+    width: 80px
+  @media (min-width: 768px)
+    width: 90px
+    height: 45px
+  @media (min-width: 1000px)
+    width: 105px
+    height: 55px
+
+.svgButton svg path
+  fill: var(--taffy-pink)
+
+.svgButton:active svg path
+  fill: var(--red)
+
+.buttonText
+  color: var(--white)
+  font-family: var(--secondary-ff)
+  font-size: 12px
+  position: absolute
+  top: 44%
+  left: 48%
+  transform: translate(-50%, -50%)
+  @media (min-width: 768px)
+    font-size: 16px
+  @media (min-width:1000px)
+    font-size: 20px

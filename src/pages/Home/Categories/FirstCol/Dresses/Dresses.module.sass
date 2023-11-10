@@ -1,0 +1,73 @@
+.dresses
+  background: url('../../../../../assets/images/dresses.jpg') no-repeat
+  background-size: cover
+  grid-column: 2 / 3
+  grid-row: 1 / 2
+  position: relative
+  @media (min-width: 768px)
+    grid-column: 2 / 3
+    grid-row: 2 / 3
+    height: 195px
+    background-position: center
+  @media (min-width: 1000px)
+    height: 235px
+  @media (min-width: 1440px)
+    height: 295px
+
+.btnWrapper
+  position: absolute
+  left: 6px
+  bottom: 15px
+  transform: rotate(2.449deg)
+  @media (min-width: 480px)
+    left: 23px
+    bottom: 48px
+  @media (min-width: 768px)
+    left: 29px
+    bottom: 60px
+    transform: rotate(0.652deg)
+  @media (min-width: 1000px)
+    left: 55px
+    bottom: 50px
+  @media (min-width: 1440px)
+    left: 15px
+    bottom: 65px
+
+.svgButton
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: all 0.3s ease
+
+.svgButton svg
+  width: 95px
+  height: 35px
+  @media (min-width: 768px)
+    width: 128px
+    height: 43px
+  @media (min-width: 1000px)
+    width: 162px
+    height: 54px
+  @media (min-width: 1440px)
+    width: 205px
+    height: 51px
+
+.svgButton svg path
+  fill: var(--taffy-pink)
+
+.svgButton:active svg path
+  fill: var(--red)
+
+.buttonText
+  color: var(--white)
+  font-family: var(--secondary-ff)
+  font-size: 12px
+  position: absolute
+  top: 44%
+  left: 47%
+  transform: translate(-50%, -50%)
+  @media (min-width: 768px)
+    font-size: 16px
+  @media (min-width:1000px)
+    font-size: 20px

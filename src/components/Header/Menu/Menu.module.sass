@@ -1,0 +1,60 @@
+.menu
+  display: none
+  @media (min-width: 768px)
+    display: flex
+    align-items: center
+    justify-content: space-between
+  .link
+    display: block
+    color: var(--umbra)
+    font-size: 14px
+    font-weight: var(--semibold-fw)
+    text-transform: uppercase
+    transition: all 0.3s ease
+    @media (min-width: 768px)
+      padding: 12.5px 0 15px
+      font-size: 16px
+    &:hover
+      color: var(--taffy-pink)
+
+.submenu
+  background-color: var(--white)
+  position: absolute
+  left: 0
+  right: 0
+  top: 110px
+  z-index: -999
+  opacity: 0
+  visibility: hidden
+  transition: all .50s ease
+
+.content
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 10px 85px
+  border-bottom: 1px solid var(--grey)
+  max-width: 735px
+  margin: 0 auto
+  @media (min-width: 1000px)
+    padding: 10px 115px
+    max-width: 900px
+  @media (min-width: 1440px)
+    padding: 15px 95px
+    max-width: 1140px
+
+.submenuLink
+  text-transform: capitalize
+  color: var(--umbra)
+  font-size: 14px
+  font-weight: var(--regular-fw)
+  transition: all 0.3s ease
+  &:hover
+    color: var(--taffy-pink)
+  @media (min-width: 1440px)
+    font-size: 16px
+
+.menu li:hover .submenu
+  opacity: 1
+  visibility: visible
+  z-index: 999
