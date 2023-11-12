@@ -10,7 +10,7 @@ const HoodiesBtnBg = () => {
         textAnchor="middle"
         class="button-text"
       >
-        Низ{" "}
+        Низ
       </text>
     </svg>
   );

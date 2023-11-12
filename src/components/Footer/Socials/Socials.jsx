@@ -10,10 +10,10 @@ const Socials = () => {
     <div className={styles.socials}>
       <h1 className={styles.title}>СОЦ.СЕТИ</h1>
       <div className={styles.links}>
-        <Link to="/">
+        <Link to="/" className={styles.link}>
           <Instagram />
         </Link>
-        <Link to="/">
+        <Link to="/" className={styles.link}>
           <Facebook />
         </Link>
       </div>

@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-import Like from "../../assets/icons/HollowHeart";
+import HollowHeart from "../../../assets/icons/HollowHeart";
 
-import styles from "./index.module.sass";
+import styles from "./ProductCard.module.sass";
 
 const ProductCard = ({ image, name, price }) => {
   return (
     <Link to="/" className={styles.productCard}>
       <div className={styles.icon}>
-        <Like />
+        <HollowHeart />
       </div>
       <div className={styles.img}>
         <img src={image} alt="" />

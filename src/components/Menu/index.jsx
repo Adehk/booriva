@@ -29,7 +29,7 @@ const Menu = () => {
         </Link>
       </li>
       <li>
-        <Link to="/menu" className={styles.link}>
+        <Link to="/wishlist" className={styles.link}>
           <Wishlist />
           Wish list
         </Link>

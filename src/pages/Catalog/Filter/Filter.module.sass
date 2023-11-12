@@ -1,0 +1,37 @@
+.filter
+  display: none
+  @media (min-width: 768px)
+    display: flex
+    flex-direction: column
+    gap: 60px
+    grid-column: 1 / 2
+    grid-row: 2 / 3
+
+.category
+  display: flex
+  flex-direction: column
+  gap: 30px
+
+.list
+  display: flex
+  flex-direction: column
+  gap: 15px
+
+.title
+  font-size: 20px
+
+.link
+  display: flex
+  align-items: center
+  gap: 16px
+  font-size: 18px
+  font-weight: var(--semibold-fw)
+  svg
+    stroke: var(--umbra)
+
+.active
+  color: var(--taffy-pink)
+  font-style: italic
+  svg
+    stroke: var(--taffy-pink)
+    fill: var(--taffy-pink)

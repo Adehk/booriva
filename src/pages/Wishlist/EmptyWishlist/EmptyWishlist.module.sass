@@ -1,0 +1,54 @@
+.emptyWishlist
+  color: var(--umbra)
+  font-family: var(--primary-fw)
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 20px
+  margin-top: 30px
+  @media (min-width: 768px)
+    gap: 25px
+    margin-top: 50px
+
+.paragraph
+  font-size: 12px
+  text-align: center
+  line-height: 125%
+  @media (min-width: 768px)
+    font-size: 18px
+
+.icon svg
+  width: 120px
+  height: 85px
+  @media (min-width: 768px)
+    width: 180px
+    height: 130px
+
+.svgButton
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: all 0.3s ease
+
+.svgButton svg
+  width: 155px
+  height: 50px
+  @media (min-width: 768px)
+    width: 160px
+    height: 50px
+
+.svgButton svg path
+  fill: var(--taffy-pink)
+
+.svgButton:active svg path
+  fill: var(--red)
+
+.buttonText
+  color: var(--white)
+  font-family: var(--secondary-ff)
+  font-size: 14px
+  position: absolute
+  top: 45%
+  left: 47%
+  transform: translate(-50%, -50%)
