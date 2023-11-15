@@ -7,6 +7,7 @@ import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 import Catalog from "./pages/Catalog";
 import Wishlist from "./pages/Wishlist";
+import Product from "./pages/Product";
 
 function App() {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
@@ -17,16 +18,13 @@ function App() {
         activeMenuItem={activeMenuItem}
         setActiveMenuItem={setActiveMenuItem}
         activeSubmenuItem={activeSubmenuItem}
-        setActiveSubMenuItem={setActiveSubmenuItem}
+        setActiveSubmenuItem={setActiveSubmenuItem}
       />
       <Routes>
         <Route path="/" element={<Home />} />
-      </Routes>
-      <Routes>
         <Route path="/catalog" element={<Catalog />} />
-      </Routes>
-      <Routes>
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
       <Menu />
       <Footer />

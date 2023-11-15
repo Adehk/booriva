@@ -6,7 +6,7 @@ import styles from "./index.module.sass";
 
 const ProductCard = ({ image, name, price }) => {
   return (
-    <Link to="/" className={styles.productCard}>
+    <Link to="/product" className={styles.productCard}>
       <div className={styles.icon}>
         <Like />
       </div>

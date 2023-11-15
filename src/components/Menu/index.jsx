@@ -17,13 +17,13 @@ const Menu = () => {
         </Link>
       </li>
       <li>
-        <Link to="/menu" className={styles.link}>
+        <Link to="/telegram" className={styles.link}>
           <Telegram />
           Написать
         </Link>
       </li>
       <li>
-        <Link to="/menu" className={styles.link}>
+        <Link to="/cart" className={styles.link}>
           <Cart />
           Корзина
         </Link>

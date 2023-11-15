@@ -7,31 +7,50 @@
     grid-column: 1 / 2
     grid-row: 2 / 3
 
-.category
+.column
   display: flex
   flex-direction: column
   gap: 30px
 
-.list
+.title
+  color: var(--umbra)
+  font-size: 20px
+  font-weight: var(--bold-fw)
+
+.options, .list
   display: flex
   flex-direction: column
   gap: 15px
 
-.title
-  font-size: 20px
-
-.link
-  display: flex
-  align-items: center
-  gap: 16px
+.item
   font-size: 18px
   font-weight: var(--semibold-fw)
-  svg
-    stroke: var(--umbra)
 
-.active
-  color: var(--taffy-pink)
-  font-style: italic
-  svg
-    stroke: var(--taffy-pink)
-    fill: var(--taffy-pink)
+.option input[type="radio"]
+  display: none
+  & + label
+    position: relative
+    color: var(--umbra)
+    font-size: 18px
+    font-weight: var(--semibold-fw)
+    cursor: pointer
+    display: flex
+    align-items: center
+  & + label:before
+    content: ''
+    width: 10px
+    height: 10px
+    border: 1px solid var(--umbra)
+    border-radius: 50%
+    background-color: var(--white)
+    transition: border-color 0.3s, background-color 0.3s
+    margin-right: 16px
+  &:checked + label:before
+    background-color: var(--taffy-pink)
+    border-color: var(--taffy-pink)
+  &:checked + label
+    color: var(--taffy-pink)
+    font-style: italic
+
+.radioBtnInput
+  visibility: hidden

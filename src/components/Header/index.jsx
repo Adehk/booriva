@@ -31,7 +31,7 @@ const Header = ({
               activeMenuItem={activeMenuItem}
               setActiveMenuItem={setActiveMenuItem}
               activeSubmenuItem={activeSubmenuItem}
-              setActiveSubMenuItem={setActiveSubmenuItem}
+              setActiveSubmenuItem={setActiveSubmenuItem}
             />
           </div>
         </div>

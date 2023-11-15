@@ -48,7 +48,13 @@ const Catalog = () => {
         <Filter />
         <div className={styles.cards}>
           {products.map(({ id, image, name, price }) => (
-            <ProductCard id={id} image={image} name={name} price={price} />
+            <ProductCard
+              id={id}
+              image={image}
+              name={name}
+              price={price}
+              key={id}
+            />
           ))}
         </div>
       </div>

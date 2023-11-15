@@ -8,7 +8,7 @@ const HoodiesBtnBg = () => {
         y="50%"
         alignmentBaseline="middle"
         textAnchor="middle"
-        class="button-text"
+        className="button-text"
       >
         Низ
       </text>
