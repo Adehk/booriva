@@ -1,99 +1,22 @@
 .product
   color: var(--black)
-  display: grid
-  grid-template-columns: 1fr
-  gap: 30px
-  padding: 65px 15px
-
-.name
-  font-size: 20px
-  font-weight: var(--semibold-fw)
-  margin-bottom: 4px
-
-.price
-  color: var(--taffy-pink)
-  font-size: 32px
-  font-weight: var(--bold-fw)
-  margin-bottom: 6px
-
-.size
   display: flex
   flex-direction: column
-  gap: 9px
-  margin-bottom: 35px
-
-.chooseSize
-  font-size: 14px
-  font-style: italic
-
-.sizeOptions
-  display: flex
-  justify-content: space-between
   gap: 30px
-
-.sizeOption
-  font-size: 12px
-  padding: 12px 5px
-  border-top: 1px solid var(--black)
-  border-bottom: 1px solid var(--black)
-
-.active
-  color: var(--taffy-pink)
-  font-style: italic
-  border-top: 1px solid var(--taffy-pink)
-  border-bottom: 1px solid var(--taffy-pink)
-
-.svgButton
-  display: flex
-  align-items: center
-  justify-content: center
-  position: relative
-  transition: all 0.3s ease
-  margin-bottom: 20px
-
-.svgButton svg
-  width: 285px
-  height: 55px
-  @media (min-width: 768px)
-    width: 180px
-    height: 50px
-
-.svgButton svg path
-  fill: var(--taffy-pink)
-
-.svgButton:active svg path
-  fill: var(--red)
-
-.buttonText
-  color: var(--white)
-  font-family: var(--secondary-ff)
-  font-size: 12px
-  position: absolute
-  top: 45%
-  left: 48%
-  transform: translate(-50%, -50%)
+  padding: 85px 15px 40px
   @media (min-width: 480px)
-    left: 49%
+    padding: 85px 15px 50px
   @media (min-width: 768px)
-    font-size: 14px
-    top: 43%
-    left: 49.5%
-  @media (min-width:1440px)
-    top: 45%
-    left: 47%
-
-.description
-  font-size: 12px
-  margin-bottom: 12px
-
-.madeOf
-  color: var(--umbra)
-  font-size: 12px
-  font-weight: var(--semibold-fw)
-  text-transform: uppercase
-  span
-    color: #000
-    font-weight: var(--regular-fw)
-
-.product svg
-  width: 280px
+    padding: 150px 15px 50px
+    display: grid
+    grid-template-columns: 48% 1fr
+    gap: 25px
+  @media (min-width: 1000px)
+    padding: 150px 50px 60px
+    grid-template-columns: 50% 1fr
+    gap: 15px
+  @media (min-width: 1440px)
+    max-width: 1140px
+    margin: 0 auto
+    padding: 155px 0 60px
+    gap: 35px
