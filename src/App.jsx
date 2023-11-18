@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import Catalog from "./pages/Catalog";
 import Wishlist from "./pages/Wishlist";
 import Product from "./pages/Product";
+import Cart from "./pages/Cart";
 
 function App() {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
@@ -25,6 +26,7 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Menu />
       <Footer />

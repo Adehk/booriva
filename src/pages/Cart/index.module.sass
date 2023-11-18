@@ -1,0 +1,139 @@
+.overlay
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: 100vh
+  z-index: 999
+  background: rgba(0, 0, 0, 0.77)
+
+.cart
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  height: 100vh
+  background-color: var(--white)
+  display: flex
+  flex-direction: column
+  padding: 30px 15px 50px
+  @media (min-width: 480px)
+    padding: 50px 15px 70px
+  @media (min-width: 768px)
+    left: auto
+    width: 470px
+    padding: 20px 25px 30px
+  @media (min-width: 1000px)
+    padding: 60px 22px 75px
+    width: 495px
+  @media (min-width:1440px)
+    width: 550px
+
+.closeBtn
+  align-self: end
+  margin-bottom: 40px
+  cursor: pointer
+  @media (min-width: 480px)
+    margin-bottom: 25px
+  @media (min-width: 768px)
+    margin-bottom: 0
+  @media (min-width: 1000px)
+    margin-bottom: 7px
+  svg
+    width: 24px
+    height: 24px
+    stroke: var(--umbra)
+    transition: all 0.3s ease
+    @media (min-width: 480px)
+      width: 36px
+      height: 36px
+    @media (min-width: 768px)
+      width: 46px
+      height: 46px
+    &:hover
+      stroke: var(--taffy-pink)
+
+.title
+  color: var(--black)
+  font-size: 16px
+  text-transform: uppercase
+  align-self: center
+  margin-bottom: 20px
+  @media (min-width: 480px)
+    margin-bottom: 25px
+  @media (min-width: 768px)
+    font-size: 25px
+    margin-bottom: 40px
+
+.products
+  display: flex
+  flex-direction: column
+  gap: 10px
+  overflow-y: scroll
+  margin-bottom: 40px
+  @media (min-width: 480px)
+    margin-bottom: 50px
+  @media (min-width: 1000px)
+    margin-bottom: 40px
+
+.products::-webkit-scrollbar
+  width: 3px
+  background-color: transparent
+
+.products::-webkit-scrollbar-track
+  border: 1px solid var(--white)
+  background-color: #FDA3C4CC
+
+.products::-webkit-scrollbar-thumb
+  background-color: var(--taffy-pink)
+  border-radius: 4px
+
+.total
+  color: var(--taffy-pink)
+  align-self: center
+  margin-bottom: 30px
+  @media (min-width: 768px)
+    color: var(--black)
+    font-size: 25px
+    margin-bottom: 40px
+  @media (min-width: 1000px)
+    margin-bottom: 50px
+
+.svgButton
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: all 0.3s ease
+
+.svgButton svg
+  width: 160px
+  height: 45px
+  @media (min-width: 768px)
+    width: 200px
+    height: 50px
+
+.svgButton svg path
+  fill: var(--taffy-pink)
+
+.svgButton:active svg path
+  fill: var(--red)
+
+.buttonText
+  color: var(--white)
+  font-family: var(--secondary-ff)
+  font-size: 12px
+  position: absolute
+  top: 44%
+  left: 48%
+  transform: translate(-50%, -50%)
+  @media (min-width: 480px)
+    left: 49%
+  @media (min-width: 768px)
+    font-size: 14px
+    left: 48%
+  @media (min-width:1000px)
+    top: 45%
+    left: 48.5%
+  @media (min-width:1440px)
+    left: 49%
