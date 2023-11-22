@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 
 import Hamburger from "../../assets/icons/Hamburger";
 import Telegram from "../../assets/icons/Telegram";
-
-import styles from "./index.module.sass";
 import Cart from "../../assets/icons/Cart";
 import Wishlist from "../../assets/icons/Wishlist";
 
-const Menu = () => {
+import styles from "./index.module.sass";
+
+const Menu = ({ setCartOpen }) => {
+  const handleCartOpen = () => {
+    setCartOpen(true);
+  };
   return (
     <ul className={styles.menu}>
       <li className={styles.hamburger}>
@@ -23,10 +26,10 @@ const Menu = () => {
         </Link>
       </li>
       <li>
-        <Link to="/cart" className={styles.link}>
+        <div className={styles.link} onClick={handleCartOpen}>
           <Cart />
           Корзина
-        </Link>
+        </div>
       </li>
       <li>
         <Link to="/wishlist" className={styles.link}>

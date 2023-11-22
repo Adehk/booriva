@@ -27,10 +27,10 @@ const Menu = ({
 
   return (
     <ul className={styles.menu}>
-      {menu.map(({ id, name, link }) => (
+      {menu.map(({ id, name }) => (
         <li key={id}>
           <Link
-            to={link}
+            to={`catalog?menuId=${id}`}
             className={
               styles.link + " " + (id === activeMenuItem ? styles.active : "")
             }
@@ -42,10 +42,10 @@ const Menu = ({
           {submenu.length > 0 && (
             <nav className={styles.submenu}>
               <ul className={styles.content}>
-                {submenu.map(({ id, name, link }) => (
+                {submenu.map(({ id, name }) => (
                   <li key={id}>
                     <Link
-                      to={link}
+                      to={`catalog?categoryId=${id}`}
                       className={
                         styles.submenuLink +
                         " " +

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import WishlistIcon from "../../../assets/icons/Wishlist";
 
 import styles from "./Wishlist.module.sass";

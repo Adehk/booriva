@@ -1,13 +1,15 @@
-import { Link } from "react-router-dom";
 import CartIcon from "../../../assets/icons/Cart";
 
 import styles from "./Cart.module.sass";
 
-const Cart = () => {
+const Cart = ({ setCartOpen }) => {
+  const handleCartOpen = () => {
+    setCartOpen(true);
+  };
   return (
-    <Link to="/cart" className={styles.cart}>
+    <div className={styles.cart} onClick={handleCartOpen}>
       <CartIcon />
-    </Link>
+    </div>
   );
 };
 

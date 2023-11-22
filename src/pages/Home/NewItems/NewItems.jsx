@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 import ProductCard from "../../../components/ProductCard";
-import SeeAllBtnBg from "../../../assets/icons/SeeAllBtnBg";
 
+import SeeAllBtnBg from "../../../assets/icons/SeeAllBtnBg";
 import ProductImg1 from "../../../assets/images/product-img-1.png";
 import ProductImg2 from "../../../assets/images/product-img-2.png";
 import ProductImg3 from "../../../assets/images/product-img-3.png";

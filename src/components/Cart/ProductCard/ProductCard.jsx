@@ -1,4 +1,4 @@
-import DeleteProductBtn from "./../../../assets/icons/DeleteProductBtn";
+import DeleteProductBtn from "../../../assets/icons/DeleteProductBtn";
 
 import styles from "./ProductCard.module.sass";
 
@@ -11,7 +11,7 @@ const ProductCard = ({ image, name, size, price }) => {
       <div className={styles.productInfo}>
         <h2 className={styles.productName}>{name}</h2>
         <p className={styles.productSize}>{size}</p>
-        <p className={styles.productPrice}>{price} &#8372;</p>
+        <p className={styles.productPrice}>{price} &#8381;</p>
       </div>
       <div className={styles.deleteProductBtn}>
         <DeleteProductBtn />

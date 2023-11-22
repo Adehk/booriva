@@ -12,9 +12,10 @@ const Header = ({
   setActiveMenuItem,
   activeSubmenuItem,
   setActiveSubmenuItem,
+  setCartOpen,
 }) => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.headerContent}>
         <div className={styles.headerInner}>
           <div className={styles.topRow}>
@@ -23,7 +24,7 @@ const Header = ({
             <div className={styles.rightCol}>
               <Search />
               <Wishlist />
-              <Cart />
+              <Cart setCartOpen={setCartOpen} />
             </div>
           </div>
           <div className={styles.bottomRow}>
@@ -36,7 +37,7 @@ const Header = ({
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

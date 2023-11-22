@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import AddToCartBtnBg from "../../../assets/icons/AddToCartBtnBg";
 import DottedLine from "../../../assets/icons/DottedLine";
@@ -14,10 +14,8 @@ const ProdictInfo = () => {
   };
   return (
     <div className={styles.productInfo}>
-      <h1 className={styles.name}>
-        Бомбер Gone Crazy хаки
-      </h1>
-      <p className={styles.price}>2 499 &#8372;</p>
+      <h1 className={styles.name}>Бомбер Gone Crazy хаки</h1>
+      <p className={styles.price}>2 499 &#8381;</p>
       <div className={styles.size}>
         <p className={styles.chooseSize}>Выбрать размер:</p>
         <form action="" className={styles.sizeOptions}>

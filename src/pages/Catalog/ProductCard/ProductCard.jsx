@@ -4,18 +4,18 @@ import HollowHeart from "../../../assets/icons/HollowHeart";
 
 import styles from "./ProductCard.module.sass";
 
-const ProductCard = ({ image, name, price }) => {
+const ProductCard = ({ images, name, price }) => {
   return (
-    <Link to="/" className={styles.productCard}>
+    <Link to="/product" className={styles.productCard}>
       <div className={styles.icon}>
         <HollowHeart />
       </div>
       <div className={styles.img}>
-        <img src={image} alt="" />
+        <img src={images} alt="" />
       </div>
       <div className={styles.info}>
         <h1 className={styles.title}>{name}</h1>
-        <p className={styles.price}>{price} &#8372;</p>
+        <p className={styles.price}>{price} &#8381;</p>
       </div>
     </Link>
   );

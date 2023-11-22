@@ -8,11 +8,14 @@ import Footer from "./components/Footer";
 import Catalog from "./pages/Catalog";
 import Wishlist from "./pages/Wishlist";
 import Product from "./pages/Product";
-import Cart from "./pages/Cart";
+import Cart from "./components/Cart";
 
 function App() {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
   const [activeSubmenuItem, setActiveSubmenuItem] = useState(0);
+
+  const [cartOpen, setCartOpen] = useState(false);
+
   return (
     <div>
       <Header
@@ -20,15 +23,24 @@ function App() {
         setActiveMenuItem={setActiveMenuItem}
         activeSubmenuItem={activeSubmenuItem}
         setActiveSubmenuItem={setActiveSubmenuItem}
+        setCartOpen={setCartOpen}
       />
+      {cartOpen && <Cart setCartOpen={setCartOpen} />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
+        <Route
+          path="/catalog"
+          element={
+            <Catalog
+              activeMenuItem={activeMenuItem}
+              activeSubmenuItem={activeSubmenuItem}
+            />
+          }
+        />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/product" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
       </Routes>
-      <Menu />
+      <Menu setCartOpen={setCartOpen} />
       <Footer />
     </div>
   );

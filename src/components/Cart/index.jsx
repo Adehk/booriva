@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 
+import ProductCard from "./ProductCard/ProductCard";
+
 import ProductImg1 from "../../assets/images/product-img-1.png";
 import ProductImg3 from "../../assets/images/product-img-3.png";
 import CheckoutBtnBg from "../../assets/icons/CheckoutBtnBg";
-import CloseCartBtn from "./../../assets/icons/CloseCartBtn";
-import ProductCard from "./ProductCard/ProductCard";
+import CloseCartBtn from "../../assets/icons/CloseCartBtn";
 
 import styles from "./index.module.sass";
 
-const Cart = () => {
+const Cart = ({ setCartOpen }) => {
   const products = [
     {
       id: 0,
@@ -53,10 +54,14 @@ const Cart = () => {
       price: 2499,
     },
   ];
+  const handleClose = () => {
+    setCartOpen(false);
+  };
   return (
-    <div className={styles.overlay}>
-      <div className={styles.cart}>
-        <div className={styles.closeBtn}>
+    <div className="cartWrapper">
+      <div className={styles.overlay}></div>
+      <div className={`${styles.cart} ${setCartOpen ? styles.active : ""}`}>
+        <div className={styles.closeBtn} onClick={handleClose}>
           <CloseCartBtn />
         </div>
         <h1 className={styles.title}>Корзина</h1>
@@ -72,7 +77,7 @@ const Cart = () => {
           ))}
         </div>
         <p className={styles.total}>
-          Cумма заказа: . . . . . . . . . . . <b>4 998 &#8372;</b>
+          Cумма заказа: . . . . . . . . . . . <b>4 998 &#8381;</b>
         </p>
         <Link to="/checkout" className={styles.svgButton}>
           <CheckoutBtnBg />

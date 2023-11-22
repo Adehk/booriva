@@ -1,61 +1,55 @@
-import ProductImg1 from "../../assets/images/product-img-1.png";
-import ProductImg2 from "../../assets/images/product-img-2.png";
-import ProductImg3 from "../../assets/images/product-img-3.png";
-import ProductImg4 from "../../assets/images/product-img-4.png";
+import { useEffect, useState } from "react";
+import { BeatLoader } from "react-spinners";
+import qs from "qs";
 
 import Filter from "../Catalog/Filter/Filter";
 import Banner from "../Catalog/Banner/Banner";
 import ProductCard from "../Catalog/ProductCard/ProductCard";
-
-import styles from "./index.module.sass";
 import Insta from "../../components/Insta";
 
-const Catalog = () => {
-  const products = [
-    {
-      id: 0,
-      image: ProductImg1,
-      name: "Cвитшoт вставка клетка",
-      price: 1099,
-    },
-    {
-      id: 1,
-      image: ProductImg2,
-      name: "Платье прозрачное в цветочек черное",
-      price: 1299,
-    },
-    {
-      id: 2,
-      image: ProductImg3,
-      name: "Бомбер Gone Crazy хаки",
-      price: 2499,
-    },
-    {
-      id: 3,
-      image: ProductImg4,
-      name: "Платье-футболка рыбы в аквариуме",
-      price: 899,
-    },
-  ];
+import styles from "./index.module.sass";
+
+const Catalog = ({ activeMenuItem, activeSubmenuItem }) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    if (window.location.search) {
+      const params = qs.parse(window.location.search.substring("1"));
+      if (params.menuId) {
+        fetch(
+          `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=${params.menuId}`
+        )
+          .then((res) => res.json())
+          .then((data) => setData(data));
+      }
+    }
+  }, [activeMenuItem, activeSubmenuItem]);
   return (
     <div>
       <div className={styles.catalog}>
         <Banner />
         <div className={styles.heading}>
-          <h1 className={styles.title}>Верх</h1>
-          <p className={styles.subtitle}>ТоПЫ</p>
+          <h1 className={styles.title}>
+            {data.length >= 1 ? data[0].menuName : ""}
+          </h1>
+          <p className={styles.subtitle}>
+            {data.length >= 1 ? data[0].categoryName : ""}
+          </p>
         </div>
         <Filter />
         <div className={styles.cards}>
-          {products.map(({ id, image, name, price }) => (
-            <ProductCard
-              id={id}
-              image={image}
-              name={name}
-              price={price}
-              key={id}
-            />
-          ))}
+          {data.length >= 1 ? (
+            data[0].products.map(({ id, images, name, price }) => (
+              <ProductCard
+                id={id}
+                images={images[0]}
+                name={name}
+                price={price}
+                key={id}
+              />
+            ))
+          ) : (
+            <BeatLoader className={styles.loader} color="#FDA3C4" />
+          )}
         </div>
       </div>
       <Insta />
