@@ -25,7 +25,8 @@ function App() {
         setActiveSubmenuItem={setActiveSubmenuItem}
         setCartOpen={setCartOpen}
       />
-      {cartOpen && <Cart setCartOpen={setCartOpen} />}
+      {/* {cartOpen && } */}
+      <Cart setCartOpen={setCartOpen} cartOpen={cartOpen} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

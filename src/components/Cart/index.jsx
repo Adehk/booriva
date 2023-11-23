@@ -9,7 +9,7 @@ import CloseCartBtn from "../../assets/icons/CloseCartBtn";
 
 import styles from "./index.module.sass";
 
-const Cart = ({ setCartOpen }) => {
+const Cart = ({ setCartOpen, cartOpen }) => {
   const products = [
     {
       id: 0,
@@ -59,8 +59,11 @@ const Cart = ({ setCartOpen }) => {
   };
   return (
     <div className="cartWrapper">
-      <div className={styles.overlay}></div>
-      <div className={`${styles.cart} ${setCartOpen ? styles.active : ""}`}>
+      <div
+        className={`${styles.overlay} ${cartOpen ? styles.overlayActive : ""}`}
+        onClick={handleClose}
+      ></div>
+      <div className={`${styles.cart} ${cartOpen ? styles.active : ""}`}>
         <div className={styles.closeBtn} onClick={handleClose}>
           <CloseCartBtn />
         </div>
