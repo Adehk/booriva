@@ -10,7 +10,7 @@ const ProductCard = ({ images, name, price }) => {
       <div className={styles.icon}>
         <HollowHeart />
       </div>
-      <div className={styles.img}>
+      <div className={styles.productImg}>
         <img src={images} alt="" />
       </div>
       <div className={styles.info}>

@@ -21,6 +21,13 @@ const Catalog = ({ activeMenuItem, activeSubmenuItem }) => {
           .then((res) => res.json())
           .then((data) => setData(data));
       }
+      if (params.categoryId) {
+        fetch(
+          `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${params.categoryId}`
+        )
+          .then((res) => res.json())
+          .then((data) => setData(data));
+      }
     }
   }, [activeMenuItem, activeSubmenuItem]);
   return (

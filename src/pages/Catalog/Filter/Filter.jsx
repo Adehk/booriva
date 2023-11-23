@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./Filter.module.sass";
 
@@ -13,16 +14,27 @@ const Filter = () => {
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
   };
+
   return (
     <div className={styles.filter}>
       <div className={styles.column}>
         <div className={styles.title}>КАТЕГОРИИ:</div>
         <ul className={styles.list}>
-          <li className={styles.item}>Платья</li>
-          <li className={styles.item}>Верх</li>
-          <li className={styles.item}>Низ</li>
-          <li className={styles.item}>Мелочи</li>
-          <li className={styles.item}>Костюмы</li>
+          <li className={styles.item}>
+            <Link to={"catalog"}>Платья</Link>
+          </li>
+          <li className={styles.item}>
+            <Link to={"catalog"}>Верх</Link>
+          </li>
+          <li className={styles.item}>
+            <Link to={"catalog"}>Низ</Link>
+          </li>
+          <li className={styles.item}>
+            <Link to={"catalog"}>Мелочи</Link>
+          </li>
+          <li className={styles.item}>
+            <Link to={"catalog"}>Костюмы</Link>
+          </li>
         </ul>
       </div>
       <div className={styles.column}>

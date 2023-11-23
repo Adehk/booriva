@@ -20,7 +20,7 @@ const Menu = ({
   const [submenu, setSubmenu] = useState([]);
 
   const handleGetArrOfCategories = (id) => {
-    fetch("https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a" + id)
+    fetch(`https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${id}`)
       .then((res) => res.json())
       .then((data) => setSubmenu(data.categories));
   };
