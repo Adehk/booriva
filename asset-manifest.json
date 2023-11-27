@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/booriva/static/css/main.093625ef.css",
-    "main.js": "/booriva/static/js/main.e2e354bc.js",
+    "main.css": "/booriva/static/css/main.7c81f3c5.css",
+    "main.js": "/booriva/static/js/main.d1008cb5.js",
     "static/media/banner.png": "/booriva/static/media/banner.c0a7230daeb628b7c8f6.png",
+    "static/media/categoryBanner.png": "/booriva/static/media/categoryBanner.40d64d952227cc32bcdc.png",
+    "static/media/boorivaStore.png": "/booriva/static/media/boorivaStore.b8251b1274435bd3cb65.png",
     "static/media/brandFounder.png": "/booriva/static/media/brandFounder.d480e43382fe5d276077.png",
     "static/media/insta-img-1.png": "/booriva/static/media/insta-img-1.3c3a23c66584b1340c90.png",
     "static/media/product-img-2.png": "/booriva/static/media/product-img-2.66daacf1a103d8fd6e1d.png",
@@ -21,12 +23,21 @@
     "static/media/hoodies.jpg": "/booriva/static/media/hoodies.1cf7a09a0631aa7565b3.jpg",
     "static/media/sundaybestrusbyalince.otf": "/booriva/static/media/sundaybestrusbyalince.c4b1c1345bf0ae9d313a.otf",
     "static/media/wavyline.svg": "/booriva/static/media/wavyline.a4b76e9a45b387d3b246.svg",
+    "static/media/squigglyLine.svg": "/booriva/static/media/squigglyLine.388e6561eb24f0b53e307f15c6379866.svg",
+    "static/media/heartS.svg": "/booriva/static/media/heartS.a2957b3ffde20eec0828d3c321c039f1.svg",
+    "static/media/heartL.svg": "/booriva/static/media/heartL.1d6850c2a2d76981be9ea20bbc680c1a.svg",
+    "static/media/horizontalTilde.svg": "/booriva/static/media/horizontalTilde.3ab7cf4308831853c0a243213ab0e14a.svg",
+    "static/media/greaterThanSignS.svg": "/booriva/static/media/greaterThanSignS.868d9523bdd5f0c4039576ed6c18ce0b.svg",
+    "static/media/verticalTilde.svg": "/booriva/static/media/verticalTilde.8eb1896bb4e641297401cc6ed9528b87.svg",
     "index.html": "/booriva/index.html",
-    "main.093625ef.css.map": "/booriva/static/css/main.093625ef.css.map",
-    "main.e2e354bc.js.map": "/booriva/static/js/main.e2e354bc.js.map"
+    "static/media/greaterThanSignL.svg": "/booriva/static/media/greaterThanSignL.95de91d32f03fabbc0d5c37495b11e79.svg",
+    "static/media/tie.svg": "/booriva/static/media/tie.c055235e8c617cb2154676a82921f893.svg",
+    "static/media/prime.svg": "/booriva/static/media/prime.394f1cd83064773368bfa3350eb6546d.svg",
+    "main.7c81f3c5.css.map": "/booriva/static/css/main.7c81f3c5.css.map",
+    "main.d1008cb5.js.map": "/booriva/static/js/main.d1008cb5.js.map"
   },
   "entrypoints": [
-    "static/css/main.093625ef.css",
-    "static/js/main.e2e354bc.js"
+    "static/css/main.7c81f3c5.css",
+    "static/js/main.d1008cb5.js"
   ]
 }
