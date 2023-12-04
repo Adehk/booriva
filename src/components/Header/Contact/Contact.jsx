@@ -13,6 +13,7 @@ const Contact = () => {
         <Location />
         Киев, Нижний вал, 37
       </div>
+
       <a href="tel:+380638433471" className={styles.phoneNumber}>
         <Phone />
         +38 063 843 34 71

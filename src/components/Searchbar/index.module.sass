@@ -1,0 +1,87 @@
+.searchBarWrapper
+  background: var(--white)
+  box-shadow: 0px 2px 2px 0px rgba(253, 163, 196, 0.24)
+  padding: 10px 15px
+  position: fixed
+  top: 41px
+  width: 100%
+  z-index: 3
+  overflow: hidden
+  opacity: 0
+  pointer-events: none
+  transform: translateY(-50px)
+  transition: .6s ease
+  @media (min-width: 480px)
+    top: 59px
+  @media (min-width: 768px)
+    top: 115px
+  @media (min-width: 1000px)
+    top: 118px
+    padding: 23px 0
+  @media (min-width: 1440px)
+    top: 110px
+
+.activeSearchBar
+  opacity: 1
+  pointer-events: auto
+  transform: none
+
+.searchBar
+  display: flex
+  gap: 8px
+  border: 1px solid var(--taffy-pink)
+  box-shadow: 0px 2px 2px 0px rgba(253, 163, 196, 0.24)
+  border-radius: 8px
+  height: 40px
+  padding: 8px
+  @media (min-width: 768px)
+    width: 565px
+    margin: 0 auto
+  @media (min-width: 1000px)
+    width: 650px
+    gap: 15px
+    border: 2px solid var(--taffy-pink)
+    height: 55px
+    padding: 15px
+
+.searchBtn
+  background-color: var(--white)
+  border: none
+  cursor: pointer
+  svg
+    fill: var(--grey)
+
+.textbox
+  width: 100%
+  border: none
+  color: var(--grey)
+  font-size: 14px
+  font-style: italic
+  font-weight: var(--light-fw)
+  caret-color: var(--taffy-pink)
+  @media (min-width: 1000px)
+    font-size: 25px
+  &:focus
+    outline: none
+    border: none
+
+.active
+  color: var(--umbra)
+  font-style: normal
+  font-weight: var(--medium-fw)
+
+.clearBtn
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: var(--white)
+  border: none
+  svg
+    fill: var(--red)
+    cursor: pointer
+    transition: all 0.3s ease
+    @media (min-width: 1000px)
+      width: 24px
+      height: 24px
+    &:hover
+      fill: var(--taffy-pink)

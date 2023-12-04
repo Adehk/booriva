@@ -12,28 +12,6 @@ const InfiniteMarquee = () => {
         <li className={styles.text}>Топовые товары</li>
         <li className={styles.text}>Топовые товары</li>
         <li className={styles.text}>Топовые товары</li>
-        {/* <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li>
-        <li className={styles.text}>Топовые товары</li> */}
       </ul>
     </div>
   );

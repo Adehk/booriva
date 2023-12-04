@@ -1,9 +1,12 @@
+import React, { useState } from "react";
+
 import Contact from "./Contact/Contact";
 import Logo from "./Logo/Logo";
 import Search from "./Search/Search";
 import Wishlist from "./Wishlist/Wishlist";
 import Cart from "./Cart/Cart";
 import Menu from "./Menu/Menu";
+import SearchBar from "../Searchbar";
 
 import styles from "./index.module.sass";
 
@@ -13,7 +16,13 @@ const Header = ({
   activeSubmenuItem,
   setActiveSubmenuItem,
   setCartOpen,
+  isSearchBarOpen,
+  setisSearchBarOpen,
 }) => {
+  const toggleSearchBar = () => {
+    setisSearchBarOpen(!isSearchBarOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
@@ -22,7 +31,7 @@ const Header = ({
             <Logo />
             <Contact />
             <div className={styles.rightCol}>
-              <Search />
+              <Search toggleSearchBar={toggleSearchBar} />
               <Wishlist />
               <Cart setCartOpen={setCartOpen} />
             </div>

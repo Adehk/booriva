@@ -1,4 +1,4 @@
-const Telegram = () => {
+const DeleteBtn = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,4 +24,4 @@ const Telegram = () => {
   );
 };
 
-export default Telegram;
+export default DeleteBtn;

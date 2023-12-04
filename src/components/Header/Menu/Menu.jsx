@@ -62,6 +62,16 @@ const Menu = ({
           )}
         </li>
       ))}
+      {/* <Link
+        to="/aboutus"
+        id='008'
+        className={
+          styles.link + " " + (id === activeMenuItem ? styles.active : "")
+        }
+        onClick={"aboutus"}
+      >
+        #Boorivagirls
+      </Link> */}
     </ul>
   );
 };

@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import qs from "qs";
 
 import styles from "./Filter.module.sass";
 
@@ -15,27 +16,29 @@ const Filter = () => {
     setSelectedSize(e.target.value);
   };
 
+  const [categories, setCategories] = useState([]);
+  const params = qs.parse(window.location.search.substring("1"));
+
+  useEffect(() => {
+    fetch(
+      `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${params.menuId}`
+    )
+      .then((res) => res.json())
+      .then((data) => setCategories(data[0].categories));
+  }, []);
   return (
     <div className={styles.filter}>
       <div className={styles.column}>
         <div className={styles.title}>КАТЕГОРИИ:</div>
-        <ul className={styles.list}>
-          <li className={styles.item}>
-            <Link to={"catalog"}>Платья</Link>
-          </li>
-          <li className={styles.item}>
-            <Link to={"catalog"}>Верх</Link>
-          </li>
-          <li className={styles.item}>
-            <Link to={"catalog"}>Низ</Link>
-          </li>
-          <li className={styles.item}>
-            <Link to={"catalog"}>Мелочи</Link>
-          </li>
-          <li className={styles.item}>
-            <Link to={"catalog"}>Костюмы</Link>
-          </li>
-        </ul>
+        {categories.length > 0 && (
+          <ul className={styles.list}>
+            {categories.map(({ id, name }) => (
+              <li className={styles.item} key={id}>
+                <Link to={`catalog?categoryId=${id}`}>{name}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <div className={styles.column}>
         <div className={styles.title}>ЦЕНЫ:</div>

@@ -19,37 +19,35 @@
   left: 0
   z-index: 99991
   background-color: var(--white)
+  color: var(--black)
   display: flex
   flex-direction: column
+  align-items: center
   padding: 30px 15px 50px
   transform: translateX(100%)
   transition: all .5s ease
   @media (min-width: 480px)
     padding: 50px 15px 70px
     left: auto
-    width: 450px
+    width: 400px
   @media (min-width: 768px)
-    width: 470px
-    padding: 20px 25px 30px
+    width: 450px
+    padding: 50px 40px
   @media (min-width: 1000px)
     padding: 60px 22px 75px
-    width: 495px
+    width: 500px
   @media (min-width:1440px)
-    width: 550px
+    width: 520px
 
 .active
   transform: translateX(0%)
 
 .closeBtn
   align-self: end
-  margin-bottom: 40px
+  margin-bottom: 65px
   cursor: pointer
-  @media (min-width: 480px)
-    margin-bottom: 25px
   @media (min-width: 768px)
-    margin-bottom: 0
-  @media (min-width: 1000px)
-    margin-bottom: 7px
+    margin-bottom: 90px
   svg
     width: 24px
     height: 24px
@@ -65,50 +63,29 @@
       stroke: var(--taffy-pink)
 
 .title
-  color: var(--black)
   font-size: 16px
   text-transform: uppercase
-  align-self: center
+  margin-bottom: 52px
+  @media (min-width: 768px)
+    font-size: 28px
+    margin-bottom: 85px
+
+.icon
+  margin-bottom: 35px
+  svg
+    width: 220px
+    height: 130px
+    @media (min-width: 768px)
+      width: 250px
+      height: 150px
+
+.text
+  text-align: center
+  font-size: 12px
+  font-weight: 400
   margin-bottom: 20px
-  @media (min-width: 480px)
-    margin-bottom: 25px
   @media (min-width: 768px)
-    font-size: 25px
-    margin-bottom: 40px
-
-.products
-  display: flex
-  flex-direction: column
-  gap: 10px
-  overflow-y: scroll
-  margin-bottom: 40px
-  @media (min-width: 480px)
-    margin-bottom: 50px
-  @media (min-width: 1000px)
-    margin-bottom: 40px
-
-.products::-webkit-scrollbar
-  width: 3px
-  background-color: transparent
-
-.products::-webkit-scrollbar-track
-  border: 1px solid var(--white)
-  background-color: var(--lightpink)
-
-.products::-webkit-scrollbar-thumb
-  background-color: var(--taffy-pink)
-  border-radius: 4px
-
-.total
-  color: var(--taffy-pink)
-  align-self: center
-  margin-bottom: 30px
-  @media (min-width: 768px)
-    color: var(--black)
-    font-size: 25px
-    margin-bottom: 40px
-  @media (min-width: 1000px)
-    margin-bottom: 50px
+    font-size: 18px
 
 .svgButton
   display: flex
@@ -118,8 +95,8 @@
   transition: all 0.3s ease
 
 .svgButton svg
-  width: 160px
-  height: 45px
+  width: 175px
+  height: 50px
   @media (min-width: 768px)
     width: 200px
     height: 50px
@@ -136,13 +113,13 @@
   font-size: 12px
   position: absolute
   top: 44%
-  left: 49%
+  left: 48%
   transform: translate(-50%, -50%)
-  @media (min-width: 480px)
-    left: 48.5%
   @media (min-width: 768px)
     font-size: 14px
-    left: 48%
-  @media (min-width:1000px)
+    left: 47%
+  @media (min-width: 1000px)
     top: 45%
-    left: 48.5%
+    left: 46%
+  @media (min-width: 1440px)
+    left: 47%

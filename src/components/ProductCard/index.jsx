@@ -10,8 +10,8 @@ const ProductCard = ({ image, name, price }) => {
       <div className={styles.icon}>
         <Like />
       </div>
-      <div className={styles.img}>
-        <img src={image} alt="" />
+      <div className={styles.productImg}>
+        <img src={image} />
       </div>
       <div className={styles.info}>
         <h1 className={styles.title}>{name}</h1>
