@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard/ProductCard";
 
 import ProductImg1 from "../../assets/images/product-img-1.png";
 import ProductImg3 from "../../assets/images/product-img-3.png";
-import CheckoutBtnBg from "../../assets/icons/CheckoutBtnBg";
+import PlaceAnOrderBtnBg from "../../assets/icons/PlaceAnOrderBtnBg";
 import CloseCartBtn from "../../assets/icons/CloseCartBtn";
 
 import styles from "./index.module.sass";
@@ -79,11 +79,14 @@ const Cart = ({ setCartOpen, cartOpen }) => {
             />
           ))}
         </div>
-        <p className={styles.total}>
-          Cумма заказа: . . . . . . . . . . . <b>4 998 &#8381;</b>
+        <p className={styles.orderPrice}>
+          <span>Cумма заказа:</span>
+          <span className={styles.price}>
+            <b>4 998 &#8381;</b>
+          </span>
         </p>
         <Link to="/checkout" className={styles.svgButton}>
-          <CheckoutBtnBg />
+          <PlaceAnOrderBtnBg />
           <span className={styles.buttonText}>Оформить заказ</span>
         </Link>
       </div>

@@ -81,10 +81,13 @@
   flex-direction: column
   gap: 10px
   overflow-y: scroll
+  height: 255px
   margin-bottom: 40px
   @media (min-width: 480px)
+    height: 400px
     margin-bottom: 50px
   @media (min-width: 1000px)
+    height: 300px
     margin-bottom: 40px
 
 .products::-webkit-scrollbar
@@ -99,16 +102,30 @@
   background-color: var(--taffy-pink)
   border-radius: 4px
 
-.total
+.orderPrice
   color: var(--taffy-pink)
-  align-self: center
+  display: flex
+  justify-content: space-between
+  position: relative
+  overflow: hidden
   margin-bottom: 30px
+  &::after
+    position: absolute
+    content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  . . . . . . . . . . . . . . . . . . . . . . . '
+    left: 120px
+    white-space: nowrap
+    z-index: -1
+    @media (min-width: 768px)
+      left: 188px
   @media (min-width: 768px)
     color: var(--black)
     font-size: 25px
     margin-bottom: 40px
   @media (min-width: 1000px)
     margin-bottom: 50px
+  .price
+    background-color: var(--white)
+    padding-left: 5px
 
 .svgButton
   display: flex

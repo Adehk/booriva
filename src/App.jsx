@@ -13,6 +13,7 @@ import EmptyCart from "./components/EmptyCart";
 import BoorivaGirls from "./pages/BoorivaGirls";
 import FourOFour from "./components/FourOFour";
 import SearchBar from "./components/Searchbar";
+import PlacingAnOrder from "./pages/PlacingAnOrder";
 
 function App() {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
@@ -33,8 +34,8 @@ function App() {
         isSearchBarOpen={isSearchBarOpen}
         setisSearchBarOpen={setisSearchBarOpen}
       />
-      {/* <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} /> */}
-      <EmptyCart cartOpen={cartOpen} setCartOpen={setCartOpen} />
+      <Cart cartOpen={cartOpen} setCartOpen={setCartOpen} />
+      {/* <EmptyCart cartOpen={cartOpen} setCartOpen={setCartOpen} /> */}
       <SearchBar isSearchBarOpen={isSearchBarOpen} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -51,6 +52,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/aboutus" element={<BoorivaGirls />} />
         <Route path="/404" element={<FourOFour />} />
+        <Route path="/checkout" element={<PlacingAnOrder />} />
       </Routes>
       <Menu setCartOpen={setCartOpen} />
       <Footer />
