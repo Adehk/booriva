@@ -8,7 +8,7 @@ const Tshirts = () => {
   return (
     <div className={styles.tShirts}>
       <div className={styles.btnWrapper}>
-        <Link to="/tshirts" className={styles.svgButton}>
+        <Link to="/catalog" className={styles.svgButton}>
           <TshirtsBtnBg />
           <span className={styles.buttonText}>Футболки</span>
         </Link>

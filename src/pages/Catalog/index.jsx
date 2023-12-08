@@ -11,6 +11,7 @@ import styles from "./index.module.sass";
 
 const Catalog = ({ activeMenuItem, activeSubmenuItem }) => {
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring("1"));
@@ -19,14 +20,20 @@ const Catalog = ({ activeMenuItem, activeSubmenuItem }) => {
           `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=${params.menuId}`
         )
           .then((res) => res.json())
-          .then((data) => setData(data));
+          .then((data) => {
+            setData(data);
+            setLoader(false);
+          });
       }
       if (params.categoryId) {
         fetch(
           `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${params.categoryId}`
         )
           .then((res) => res.json())
-          .then((data) => setData(data));
+          .then((data) => {
+            setData(data);
+            setLoader(false);
+          });
       }
     }
   }, [activeMenuItem, activeSubmenuItem]);
@@ -54,8 +61,10 @@ const Catalog = ({ activeMenuItem, activeSubmenuItem }) => {
                 key={id}
               />
             ))
-          ) : (
+          ) : loader ? (
             <BeatLoader className={styles.loader} color="#FDA3C4" />
+          ) : (
+            "Товар не найден."
           )}
         </div>
       </div>

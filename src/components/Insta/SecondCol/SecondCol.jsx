@@ -13,7 +13,9 @@ const SecondCol = () => {
         <img src={InstaImg3} className={styles.thirdImg} alt="" />
       </div>
       <div className={styles.text}>
-        <p className={styles.title}>#boorivagirls</p>
+        <a href="#" className={styles.link}>
+          #boorivagirls
+        </a>
         <p className={styles.subtitle}>Ставь тэг чтобы быть в нашей тусовке.</p>
       </div>
     </div>

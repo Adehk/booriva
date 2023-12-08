@@ -17,15 +17,18 @@ const Filter = () => {
   };
 
   const [categories, setCategories] = useState([]);
-  const params = qs.parse(window.location.search.substring("1"));
+  const params = qs.parse(window.location.search.substring(1));
 
   useEffect(() => {
-    fetch(
-      `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${params.menuId}`
-    )
-      .then((res) => res.json())
-      .then((data) => setCategories(data[0].categories));
-  }, []);
+    if (params.meniId) {
+      fetch(
+        `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${params.menuId}`
+      )
+        .then((res) => res.json())
+        .then((data) => setCategories(data.categories));
+    }
+  }, [params.menuId]);
+
   return (
     <div className={styles.filter}>
       <div className={styles.column}>

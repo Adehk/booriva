@@ -1,14 +1,10 @@
+import styles from "./NewItems.module.sass";
 import { Link } from "react-router-dom";
 
 import ProductCard from "../../../components/ProductCard";
 
 import SeeAllBtnBg from "../../../assets/icons/SeeAllBtnBg";
-import ProductImg1 from "../../../assets/images/product-img-1.png";
-import ProductImg2 from "../../../assets/images/product-img-2.png";
-import ProductImg3 from "../../../assets/images/product-img-3.png";
-import ProductImg4 from "../../../assets/images/product-img-4.png";
 
-import styles from "./NewItems.module.sass";
 import { useState, useEffect } from "react";
 
 const NewItems = () => {
@@ -45,7 +41,7 @@ const NewItems = () => {
               ))
           : ""}
       </div>
-      <Link to="/catalog" className={styles.svgButton}>
+      <Link to="/catalog?menuId=000" className={styles.svgButton}>
         <SeeAllBtnBg />
         <span className={styles.buttonText}>Cмотреть все</span>
       </Link>

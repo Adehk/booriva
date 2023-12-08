@@ -11,9 +11,9 @@ import Product from "./pages/Product";
 import Cart from "./components/Cart";
 import EmptyCart from "./components/EmptyCart";
 import BoorivaGirls from "./pages/BoorivaGirls";
-import FourOFour from "./components/FourOFour";
 import SearchBar from "./components/Searchbar";
 import PlacingAnOrder from "./pages/PlacingAnOrder";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
@@ -51,8 +51,8 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/product" element={<Product />} />
         <Route path="/aboutus" element={<BoorivaGirls />} />
-        <Route path="/404" element={<FourOFour />} />
         <Route path="/checkout" element={<PlacingAnOrder />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Menu setCartOpen={setCartOpen} />
       <Footer />

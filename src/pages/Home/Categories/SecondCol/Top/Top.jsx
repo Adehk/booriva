@@ -8,7 +8,7 @@ const Top = () => {
   return (
     <div className={styles.top}>
       <div className={styles.btnWrapper}>
-        <Link to="/top" className={styles.svgButton}>
+        <Link to="/catalog" className={styles.svgButton}>
           <TopBtnBg />
           <span className={styles.buttonText}>Верх</span>
         </Link>

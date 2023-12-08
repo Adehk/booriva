@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 import Dragon from "../../assets/icons/Dragon";
-import ToHomePageBtnBg from "../../assets/icons/ToHomePageBtnBg";
+import BackToHome from "../../assets/icons/BackToHome";
 
 import styles from "./index.module.sass";
 
-const FourOFour = () => {
+const PageNotFound = () => {
   return (
-    <div className={styles.fourOFour}>
+    <div className={styles.pageNotFound}>
       <div className={styles.icon}>
         <Dragon />
       </div>
@@ -27,11 +27,11 @@ const FourOFour = () => {
         Страница не найдена, но у нас есть <br /> еще много всего интересного
       </p>
       <Link to="/" className={styles.svgButton}>
-        <ToHomePageBtnBg />
+        <BackToHome />
         <span className={styles.buttonText}>На главную</span>
       </Link>
     </div>
   );
 };
 
-export default FourOFour;
+export default PageNotFound;

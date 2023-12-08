@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import ToHomePageBtnBg from "../../../assets/icons/ToHomePageBtnBg";
+import BackToHome from "../../../assets/icons/BackToHome";
 import EmptyWishlistIcon from "../../../assets/icons/EmptyWishlistIcon";
 
 import styles from "./EmptyWishlist.module.sass";
@@ -15,7 +15,7 @@ const EmptyWishlist = () => {
         Похоже тебе еще ничего не запало <br /> в сердечко....
       </p>
       <Link to="/" className={styles.svgButton}>
-        <ToHomePageBtnBg />
+        <BackToHome />
         <span className={styles.buttonText}>На главную</span>
       </Link>
     </div>

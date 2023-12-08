@@ -8,7 +8,7 @@ const Dresses = () => {
   return (
     <div className={styles.dresses}>
       <div className={styles.btnWrapper}>
-        <Link to="/dresses" className={styles.svgButton}>
+        <Link to="/catalog" className={styles.svgButton}>
           <DressesBtnbg /> <span className={styles.buttonText}>Платья</span>
         </Link>
       </div>

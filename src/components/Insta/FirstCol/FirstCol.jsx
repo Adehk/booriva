@@ -1,4 +1,4 @@
-import InstaImg1 from "../../../assets/images/insta-img-1.png";
+import InstaImg1 from "../../../assets/images/insta-img-1.jpg";
 import InstaImg2 from "../../../assets/images/insta-img-2.png";
 import InstaImg3 from "../../../assets/images/insta-img-3.png";
 import InstaImg4 from "../../../assets/images/insta-img-5.png";

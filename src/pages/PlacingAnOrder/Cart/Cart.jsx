@@ -69,7 +69,7 @@ const Cart = () => {
         <div className={styles.deliveryPrice}>
           <span>Стоимость доставки:</span>
           <span>
-            <b>бесплатоно</b>
+            <b>бесплатно</b>
           </span>
         </div>
         <p className={styles.total}>

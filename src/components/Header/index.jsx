@@ -6,7 +6,6 @@ import Search from "./Search/Search";
 import Wishlist from "./Wishlist/Wishlist";
 import Cart from "./Cart/Cart";
 import Menu from "./Menu/Menu";
-import SearchBar from "../Searchbar";
 
 import styles from "./index.module.sass";
 

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import AddToCartBtnBg from "../../../assets/icons/AddToCartBtnBg";
-import DottedLine from "../../../assets/icons/DottedLine";
 
 import styles from "./ProductInfo.module.sass";
 
@@ -74,9 +73,7 @@ const ProdictInfo = () => {
         выполнена в серебряном цвете. Акцентными деталями выступают объемные
         нашитые карманы и капюшон, который отстёгивается.
       </p>
-      <div className={styles.icon}>
-        <DottedLine />
-      </div>
+      <div className={styles.dottedLine}></div>
       <p className={styles.madeOf}>
         Состав: &nbsp; <span>50% вискоза, 50% полиэстер</span>
       </p>

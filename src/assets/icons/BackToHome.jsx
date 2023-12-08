@@ -1,4 +1,4 @@
-const ToHomePageBtnBg = () => {
+const BackToHome = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,4 +19,4 @@ const ToHomePageBtnBg = () => {
   );
 };
 
-export default ToHomePageBtnBg;
+export default BackToHome;
