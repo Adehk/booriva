@@ -45,6 +45,7 @@ function App() {
             <Catalog
               activeMenuItem={activeMenuItem}
               activeSubmenuItem={activeSubmenuItem}
+              setActiveSubmenuItem={setActiveSubmenuItem}
             />
           }
         />

@@ -9,7 +9,11 @@ import Insta from "../../components/Insta";
 
 import styles from "./index.module.sass";
 
-const Catalog = ({ activeMenuItem, activeSubmenuItem }) => {
+const Catalog = ({
+  activeMenuItem,
+  activeSubmenuItem,
+  setActiveSubmenuItem,
+}) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
@@ -49,7 +53,10 @@ const Catalog = ({ activeMenuItem, activeSubmenuItem }) => {
             {data.length >= 1 ? data[0].categoryName : ""}
           </p>
         </div>
-        <Filter />
+        <Filter
+          activeSubmenuItem={activeSubmenuItem}
+          setActiveSubmenuItem={setActiveSubmenuItem}
+        />
         <div className={styles.cards}>
           {data.length >= 1 ? (
             data[0].products.map(({ id, images, name, price }) => (

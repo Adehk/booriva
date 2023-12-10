@@ -4,7 +4,7 @@ import qs from "qs";
 
 import styles from "./Filter.module.sass";
 
-const Filter = () => {
+const Filter = ({ setActiveSubmenuItem, activeSubmenuItem }) => {
   const [selectedPrice, setSelectedPrice] = useState("allprices");
   const [selectedSize, setSelectedSize] = useState("XS—S");
 
@@ -20,29 +20,37 @@ const Filter = () => {
   const params = qs.parse(window.location.search.substring(1));
 
   useEffect(() => {
-    if (params.meniId) {
-      fetch(
-        `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${params.menuId}`
-      )
-        .then((res) => res.json())
-        .then((data) => setCategories(data.categories));
-    }
+    fetch(
+      `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${params.menuId}`
+    )
+      .then((res) => res.json())
+      .then((data) => setCategories(data.categories));
   }, [params.menuId]);
 
   return (
     <div className={styles.filter}>
-      <div className={styles.column}>
-        <div className={styles.title}>КАТЕГОРИИ:</div>
-        {categories.length > 0 && (
+      {categories && categories.length > 0 && (
+        <div className={styles.column}>
+          <div className={styles.title}>КАТЕГОРИИ:</div>
           <ul className={styles.list}>
             {categories.map(({ id, name }) => (
-              <li className={styles.item} key={id}>
-                <Link to={`catalog?categoryId=${id}`}>{name}</Link>
+              <li
+                className={
+                  styles.item +
+                  " " +
+                  (id === activeSubmenuItem ? styles.active : "")
+                }
+                onClick={() => {
+                  setActiveSubmenuItem(id);
+                }}
+                key={id}
+              >
+                <Link to={`?categoryId=${id}`}>{name}</Link>
               </li>
             ))}
           </ul>
-        )}
-      </div>
+        </div>
+      )}
       <div className={styles.column}>
         <div className={styles.title}>ЦЕНЫ:</div>
         <form action="" className={styles.options}>

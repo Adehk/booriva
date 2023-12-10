@@ -62,16 +62,17 @@ const Menu = ({
           )}
         </li>
       ))}
-      {/* <Link
+      <Link
         to="/aboutus"
-        id='008'
         className={
-          styles.link + " " + (id === activeMenuItem ? styles.active : "")
+          styles.link +
+          " " +
+          ("aboutus" === activeMenuItem ? styles.active : "")
         }
-        onClick={"aboutus"}
+        onClick={() => setActiveMenuItem("aboutus")}
       >
         #Boorivagirls
-      </Link> */}
+      </Link>
     </ul>
   );
 };
