@@ -77,7 +77,7 @@
   margin-top: 20px
   &::after
     position: absolute
-    content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+    content: '...............................................................................................................................................'
     left: 55px
     white-space: nowrap
     z-index: -1
@@ -97,7 +97,7 @@
   overflow: hidden
   &::after
     position: absolute
-    content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+    content: '...............................................................................................................................................'
     left: 120px
     white-space: nowrap
     z-index: -1
@@ -224,13 +224,13 @@
   flex-direction: column
   gap: 20px
 
-[type="radio"]:checked,
-[type="radio"]:not(:checked) 
+.radioBtn input:checked,
+.radioBtn input:not(:checked)
   position: absolute
   left: -9999px
 
-[type="radio"]:checked + label,
-[type="radio"]:not(:checked) + label
+.radioBtn input:checked + label,
+.radioBtn input:not(:checked) + label
   position: relative
   padding-left: 28px
   cursor: pointer
@@ -240,8 +240,8 @@
     padding-left: 30px
     font-size: 16px
 
-[type="radio"]:checked + label:before,
-[type="radio"]:not(:checked) + label:before 
+.radioBtn input:checked + label:before,
+.radioBtn input:not(:checked) + label:before
   content: ''
   position: absolute
   left: 0
@@ -257,7 +257,7 @@
     height: 12px
     margin-top: 2px
 
-[type="radio"]:checked + label:before
+.radioBtn input:checked + label:before
   background-color: var(--taffy-pink)
   border: 2px solid var(--taffy-pink)
 
@@ -293,7 +293,7 @@ textarea
     font-size: 25px
   &::after
     position: absolute
-    content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+    content: '...............................................................................................................................................'
     left: 80px
     white-space: nowrap
     z-index: -1

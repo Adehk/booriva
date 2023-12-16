@@ -37,12 +37,12 @@ const Wishlist = () => {
           <h1 className={styles.title}>Список желаний</h1>
           <p className={styles.subtitle}>твой тайный Список желаний</p>
         </div>
-        <EmptyWishlist />
-        {/* <div className={styles.cards}>
+        {/* <EmptyWishlist /> */}
+        <div className={styles.cards}>
           {products.map(({ id, image, name, price }) => (
             <ProductCard key={id} image={image} name={name} price={price} />
           ))}
-        </div> */}
+        </div>
       </div>
       <USP />
       <Insta />

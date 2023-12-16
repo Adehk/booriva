@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import CloseOrderAcceptedBtn from "../../../assets/icons/CloseOrderAcceptedBtn";
 import BackToHome from "../../../assets/icons/BackToHome";
 
 import styles from "./OrderAccepted.module.sass";
-import { useEffect } from "react";
 
 const OrderAccepted = ({
   isOrderAcceptedVisible,
@@ -18,12 +18,12 @@ const OrderAccepted = ({
     console.log(isOrderAcceptedVisible);
   }, [isOrderAcceptedVisible]);
   return (
-    <div
-      className={`${styles.orderAcceptedWrapper} ${
-        isOrderAcceptedVisible ? styles.active : ""
-      }`}
-    >
-      <div className={styles.orderAccepted}>
+    <div className={styles.orderAcceptedWrapper}>
+      <div
+        className={`${styles.orderAccepted} ${
+          isOrderAcceptedVisible ? styles.active : ""
+        }`}
+      >
         <div className={styles.closeBtn} onClick={handleHideOrderAccepted}>
           <CloseOrderAcceptedBtn />
         </div>
@@ -35,7 +35,8 @@ const OrderAccepted = ({
           <p className={styles.paragraph}>
             Мы любим встречать booriva на улице. Так как всех не встретишь,
             отмечай нас в соц.сетях и мы внутри взорвемся и закричим УРА! <br />
-            Ставь тэг <a href="#">#boorivagirls</a> чтобы быть в нашей тусовке.
+            Ставь тэг <Link to="/#">#boorivagirls</Link> чтобы быть в нашей
+            тусовке.
           </p>
         </div>
         <Link to="/" className={styles.svgButton}>

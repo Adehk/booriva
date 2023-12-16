@@ -4,7 +4,7 @@ import qs from "qs";
 
 import styles from "./Filter.module.sass";
 
-const Filter = ({ setActiveSubmenuItem, activeSubmenuItem }) => {
+const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   const [selectedPrice, setSelectedPrice] = useState("allprices");
   const [selectedSize, setSelectedSize] = useState("XS—S");
 
@@ -34,18 +34,20 @@ const Filter = ({ setActiveSubmenuItem, activeSubmenuItem }) => {
           <div className={styles.title}>КАТЕГОРИИ:</div>
           <ul className={styles.list}>
             {categories.map(({ id, name }) => (
-              <li
-                className={
-                  styles.item +
-                  " " +
-                  (id === activeSubmenuItem ? styles.active : "")
-                }
-                onClick={() => {
-                  setActiveSubmenuItem(id);
-                }}
-                key={id}
-              >
-                <Link to={`?categoryId=${id}`}>{name}</Link>
+              <li key={id}>
+                <Link
+                  to={`?menuId=${params.menuId}&categoryId=${id}`}
+                  className={
+                    styles.item +
+                    " " +
+                    (id === activeSubmenuItem ? styles.active : "")
+                  }
+                  onClick={() => {
+                    setActiveSubmenuItem(id);
+                  }}
+                >
+                  {name}
+                </Link>
               </li>
             ))}
           </ul>

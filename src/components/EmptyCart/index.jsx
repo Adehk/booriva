@@ -1,22 +1,24 @@
 import { Link } from "react-router-dom";
 
-import CloseCartBtn from "../../assets/icons/CloseCartBtn";
+import CloseCartBtn from "../../assets/icons/CloseBtn";
 import CatInTheBag from "../../assets/icons/CatInTheBag";
 import StartShoppingBtnBg from "../../assets/icons/StartShoppingBtnBg";
 
 import styles from "./index.module.sass";
 
-const EmptyCart = ({ setCartOpen, cartOpen }) => {
+const EmptyCart = ({ isCartOpen, setIsCartOpen }) => {
   const handleClose = () => {
-    setCartOpen(false);
+    setIsCartOpen(false);
   };
   return (
     <div className="cartWrapper">
       <div
-        className={`${styles.overlay} ${cartOpen ? styles.overlayActive : ""}`}
+        className={`${styles.overlay} ${
+          isCartOpen ? styles.overlayActive : ""
+        }`}
         onClick={handleClose}
       ></div>
-      <div className={`${styles.cart} ${cartOpen ? styles.active : ""}`}>
+      <div className={`${styles.cart} ${isCartOpen ? styles.active : ""}`}>
         <div className={styles.closeBtn} onClick={handleClose}>
           <CloseCartBtn />
         </div>

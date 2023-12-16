@@ -1,5 +1,4 @@
-import { useState } from "react";
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Search from "../../assets/icons/Search";
 import DeleteBtn from "../../assets/icons/DeleteBtn";
@@ -9,6 +8,7 @@ import styles from "./index.module.sass";
 const SearchBar = ({ isSearchBarOpen }) => {
   const [value, setValue] = useState("");
   const [isInputActive, setIsInputActive] = useState(false);
+  const InputRef = useRef();
 
   const handleInputChange = (e) => {
     setValue(e.target.value);
@@ -19,6 +19,11 @@ const SearchBar = ({ isSearchBarOpen }) => {
     setValue("");
     setIsInputActive(false);
   };
+
+  useEffect(() => {
+    InputRef.current.focus();
+  }, [isSearchBarOpen]);
+  
   return (
     <form
       className={`${styles.searchBarWrapper} ${
@@ -34,6 +39,7 @@ const SearchBar = ({ isSearchBarOpen }) => {
           className={
             styles.textbox + " " + (isInputActive ? styles.active : "")
           }
+          ref={InputRef}
           placeholder="Поиск товаров"
           value={value}
           onChange={handleInputChange}

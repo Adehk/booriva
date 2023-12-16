@@ -1,7 +1,7 @@
 import InstaImg1 from "../../../assets/images/insta-img-1.jpg";
-import InstaImg2 from "../../../assets/images/insta-img-2.png";
+import InstaImg2 from "../../../assets/images/insta-img-2.jpg";
 import InstaImg3 from "../../../assets/images/insta-img-3.png";
-import InstaImg4 from "../../../assets/images/insta-img-5.png";
+import InstaImg4 from "../../../assets/images/insta-img-5.jpg";
 import InstaImg5 from "../../../assets/images/insta-img-4.png";
 
 import styles from "./FirstCol.module.sass";

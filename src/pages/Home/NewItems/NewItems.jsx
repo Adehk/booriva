@@ -1,45 +1,50 @@
-import styles from "./NewItems.module.sass";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { BeatLoader } from "react-spinners";
 
 import ProductCard from "../../../components/ProductCard";
 
 import SeeAllBtnBg from "../../../assets/icons/SeeAllBtnBg";
 
-import { useState, useEffect } from "react";
+import styles from "./NewItems.module.sass";
 
 const NewItems = () => {
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     fetch("https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=000")
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => {
+        setData(data);
+        setLoader(false);
+      });
   }, []);
 
   return (
     <div className={styles.newItems}>
       <div className={styles.heading}>
-        <h1 className={styles.shadow}>
-          {data.length >= 1 ? data[0].menuName : ""}
-        </h1>
-        <p className={styles.title}>
-          {data.length >= 1 ? data[0].menuName : ""}
-        </p>
+        <h1 className={styles.category}>Новинки</h1>
+        <p className={styles.subcategory}>Новинки</p>
       </div>
       <div className={styles.cards}>
-        {data.length >= 1
-          ? data[0].products
-              .slice(0, 4)
-              .map(({ id, images, name, price }) => (
-                <ProductCard
-                  id={id}
-                  image={images[0]}
-                  name={name}
-                  price={price}
-                  key={id}
-                />
-              ))
-          : ""}
+        {data.length >= 1 ? (
+          data[0].products
+            .slice(0, 4)
+            .map(({ id, images, name, price }) => (
+              <ProductCard
+                id={id}
+                images={images}
+                name={name}
+                price={price}
+                key={id}
+              />
+            ))
+        ) : loader ? (
+          <BeatLoader className={styles.loader} color="#FDA3C4" />
+        ) : (
+          "Товар не найден"
+        )}
       </div>
       <Link to="/catalog?menuId=000" className={styles.svgButton}>
         <SeeAllBtnBg />

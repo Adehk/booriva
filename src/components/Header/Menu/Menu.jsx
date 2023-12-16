@@ -10,14 +10,13 @@ const Menu = ({
   setActiveSubmenuItem,
 }) => {
   const [menu, setMenu] = useState([]);
+  const [submenu, setSubmenu] = useState([]);
 
   useEffect(() => {
     fetch("https://640ef1d54ed25579dc40e2a6.mockapi.io/menu")
       .then((res) => res.json())
       .then((data) => setMenu(data));
   }, []);
-
-  const [submenu, setSubmenu] = useState([]);
 
   const handleGetArrOfCategories = (id) => {
     fetch(`https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${id}`)

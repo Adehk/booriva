@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
 
 import ProductCard from "./ProductCard/ProductCard";
 
 import ProductImg1 from "../../assets/images/product-img-1.png";
 import ProductImg3 from "../../assets/images/product-img-3.png";
 import PlaceAnOrderBtnBg from "../../assets/icons/PlaceAnOrderBtnBg";
-import CloseCartBtn from "../../assets/icons/CloseCartBtn";
+import CloseBtn from "../../assets/icons/CloseBtn";
 
 import styles from "./index.module.sass";
 
-const Cart = ({ setCartOpen, cartOpen }) => {
+const Cart = ({ isCartOpen, setIsCartOpen, setIsCartActive }) => {
   const products = [
     {
       id: 0,
@@ -54,18 +55,28 @@ const Cart = ({ setCartOpen, cartOpen }) => {
       price: 2499,
     },
   ];
-  const handleClose = () => {
-    setCartOpen(false);
+  const handleCartClose = () => {
+    setIsCartOpen(false);
+    setIsCartActive(false);
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsCartOpen(false);
+  }, [location]);
+
   return (
     <div className="cartWrapper">
       <div
-        className={`${styles.overlay} ${cartOpen ? styles.overlayActive : ""}`}
-        onClick={handleClose}
+        className={`${styles.overlay} ${
+          isCartOpen ? styles.overlayActive : ""
+        }`}
+        onClick={handleCartClose}
       ></div>
-      <div className={`${styles.cart} ${cartOpen ? styles.active : ""}`}>
-        <div className={styles.closeBtn} onClick={handleClose}>
-          <CloseCartBtn />
+      <div className={`${styles.cart} ${isCartOpen ? styles.active : ""}`}>
+        <div className={styles.closeBtn} onClick={handleCartClose}>
+          <CloseBtn />
         </div>
         <h1 className={styles.title}>Корзина</h1>
         <div className={styles.products}>

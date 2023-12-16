@@ -9,13 +9,21 @@
   height: 100vh
   z-index: 9999
   overflow: hidden
-  opacity: 0
   transition: all 1s ease
   @media (min-width: 768px)
     background-color: rgba(253, 163, 196, 0.51)
 
 .active
-  opacity: 1
+  opacity: 0
+  animation: showOrderAccepted 0.3s linear forwards
+
+@keyframes showOrderAccepted
+  0%
+    opacity: 0
+    transform: scale(0.5)
+  100%
+    opacity: 1
+    transform: scale(1)
 
 .orderAccepted
   display: flex

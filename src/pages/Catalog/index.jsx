@@ -4,7 +4,7 @@ import qs from "qs";
 
 import Filter from "../Catalog/Filter/Filter";
 import Banner from "../Catalog/Banner/Banner";
-import ProductCard from "../Catalog/ProductCard/ProductCard";
+import ProductCard from "../../components/ProductCard";
 import Insta from "../../components/Insta";
 
 import styles from "./index.module.sass";
@@ -13,6 +13,8 @@ const Catalog = ({
   activeMenuItem,
   activeSubmenuItem,
   setActiveSubmenuItem,
+  savedData,
+  setSavedData,
 }) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -46,10 +48,10 @@ const Catalog = ({
       <div className={styles.catalog}>
         <Banner />
         <div className={styles.heading}>
-          <h1 className={styles.title}>
+          <h1 className={styles.category}>
             {data.length >= 1 ? data[0].menuName : ""}
           </h1>
-          <p className={styles.subtitle}>
+          <p className={styles.subcategory}>
             {data.length >= 1 ? data[0].categoryName : ""}
           </p>
         </div>
@@ -62,16 +64,17 @@ const Catalog = ({
             data[0].products.map(({ id, images, name, price }) => (
               <ProductCard
                 id={id}
-                images={images[0]}
+                images={images}
                 name={name}
                 price={price}
                 key={id}
+                setSavedData={setSavedData}
               />
             ))
           ) : loader ? (
             <BeatLoader className={styles.loader} color="#FDA3C4" />
           ) : (
-            "Товар не найден."
+            "Товар не найден"
           )}
         </div>
       </div>

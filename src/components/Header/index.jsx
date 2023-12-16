@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 import Contact from "./Contact/Contact";
 import Logo from "./Logo/Logo";
 import Search from "./Search/Search";
@@ -14,12 +12,15 @@ const Header = ({
   setActiveMenuItem,
   activeSubmenuItem,
   setActiveSubmenuItem,
-  setCartOpen,
+  isCartOpen,
+  setIsCartOpen,
   isSearchBarOpen,
-  setisSearchBarOpen,
+  setIsSearchBarOpen,
+  isCartActive,
+  setIsCartActive,
 }) => {
   const toggleSearchBar = () => {
-    setisSearchBarOpen(!isSearchBarOpen);
+    setIsSearchBarOpen(!isSearchBarOpen);
   };
 
   return (
@@ -32,7 +33,12 @@ const Header = ({
             <div className={styles.rightCol}>
               <Search toggleSearchBar={toggleSearchBar} />
               <Wishlist />
-              <Cart setCartOpen={setCartOpen} />
+              <Cart
+                isCartOpen={isCartOpen}
+                setIsCartOpen={setIsCartOpen}
+                isCartActive={isCartActive}
+                setIsCartActive={setIsCartActive}
+              />
             </div>
           </div>
           <div className={styles.bottomRow}>

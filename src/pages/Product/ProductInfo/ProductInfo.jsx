@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 import AddToCartBtnBg from "../../../assets/icons/AddToCartBtnBg";
 
 import styles from "./ProductInfo.module.sass";
 
-const ProdictInfo = () => {
+const ProdictInfo = ({ name, price, desc, details }) => {
   const [selectedSize, setSelectedSize] = useState("XS—S");
 
   const handleSizeChange = (e) => {
@@ -13,12 +12,12 @@ const ProdictInfo = () => {
   };
   return (
     <div className={styles.productInfo}>
-      <h1 className={styles.name}>Бомбер Gone Crazy хаки</h1>
-      <p className={styles.price}>2 499 &#8381;</p>
+      <h1 className={styles.name}>{name}</h1>
+      <p className={styles.price}>{price} &#8381;</p>
       <div className={styles.size}>
         <p className={styles.chooseSize}>Выбрать размер:</p>
         <form action="" className={styles.sizeOptions}>
-          <label for="XS—S">
+          <label htmlFor="XS—S">
             <input
               type="radio"
               id="XS—S"
@@ -29,7 +28,7 @@ const ProdictInfo = () => {
             />
             <span>XS — S</span>
           </label>
-          <label for="S—M">
+          <label htmlFor="S—M">
             <input
               type="radio"
               id="S—M"
@@ -40,7 +39,7 @@ const ProdictInfo = () => {
             />
             <span>S — M</span>
           </label>
-          <label for="L—XL">
+          <label htmlFor="L—XL">
             <input
               type="radio"
               id="L—XL"
@@ -51,7 +50,7 @@ const ProdictInfo = () => {
             />
             <span>L — XL</span>
           </label>
-          <label for="M—L">
+          <label htmlFor="M—L">
             <input
               type="radio"
               id="M—L"
@@ -64,18 +63,15 @@ const ProdictInfo = () => {
           </label>
         </form>
       </div>
-      <Link to="/cart" className={styles.svgButton}>
+      <div className={styles.svgButton}>
         <AddToCartBtnBg />
         <span className={styles.buttonText}>В корзину</span>
-      </Link>
-      <p className={styles.description}>
-        Over size бомбер цвета хаки на резинке с объемными рукавами. Фурнитура
-        выполнена в серебряном цвете. Акцентными деталями выступают объемные
-        нашитые карманы и капюшон, который отстёгивается.
-      </p>
+      </div>
+      <p className={styles.description}>{desc}</p>
       <div className={styles.dottedLine}></div>
       <p className={styles.madeOf}>
-        Состав: &nbsp; <span>50% вискоза, 50% полиэстер</span>
+        <b>Состав: </b>
+        {details}
       </p>
     </div>
   );

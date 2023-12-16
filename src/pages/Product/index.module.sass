@@ -2,21 +2,27 @@
   color: var(--black)
   display: flex
   flex-direction: column
-  gap: 30px
-  padding: 85px 15px 40px
+  gap: 15px
+  padding: 55px 15px 40px
   @media (min-width: 480px)
-    padding: 85px 15px 50px
+    padding: 70px 15px 50px
   @media (min-width: 768px)
-    padding: 150px 15px 50px
+    padding: 135px 15px 50px
     display: grid
     grid-template-columns: 48% 1fr
     gap: 25px
   @media (min-width: 1000px)
-    padding: 150px 50px 60px
+    padding: 145px 50px 60px
     grid-template-columns: 50% 1fr
     gap: 15px
   @media (min-width: 1440px)
     max-width: 1140px
     margin: 0 auto
-    padding: 155px 0 60px
+    padding: 145px 0 60px
     gap: 45px
+
+.loader
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: 175px 0

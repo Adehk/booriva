@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import InstagramBtnBg from "../../assets/icons/InstagramBtnBg";
 
 import styles from "./index.module.sass";
@@ -24,12 +26,12 @@ const BoorivaGirls = () => {
       <div className={styles.image}></div>
       <div className={styles.image}></div>
       <p className={styles.link}>
-        Ставь тэг <a href="#">#boorivagirls</a> чтобы быть в нашей тусовке.
+        Ставь тэг <Link to="/#">#boorivagirls</Link> чтобы быть в нашей тусовке.
       </p>
-      <a href="#" className={styles.svgButton}>
+      <Link to="/#" className={styles.svgButton}>
         <InstagramBtnBg />
         <span className={styles.buttonText}>Instagram</span>
-      </a>
+      </Link>
     </div>
   );
 };
