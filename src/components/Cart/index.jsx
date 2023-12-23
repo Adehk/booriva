@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import React, { useEffect } from "react";
 
 import ProductCard from "./ProductCard/ProductCard";
 
@@ -11,6 +11,8 @@ import CloseBtn from "../../assets/icons/CloseBtn";
 import styles from "./index.module.sass";
 
 const Cart = ({ isCartOpen, setIsCartOpen, setIsCartActive }) => {
+  const location = useLocation();
+
   const products = [
     {
       id: 0,
@@ -60,11 +62,12 @@ const Cart = ({ isCartOpen, setIsCartOpen, setIsCartActive }) => {
     setIsCartActive(false);
   };
 
-  const location = useLocation();
-
   useEffect(() => {
-    setIsCartOpen(false);
-  }, [location]);
+    if (isCartOpen) {
+      setIsCartOpen(false);
+      setIsCartActive(false);
+    }
+  }, [location, setIsCartOpen, setIsCartActive]);
 
   return (
     <div className="cartWrapper">

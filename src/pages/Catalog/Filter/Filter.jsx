@@ -7,15 +7,6 @@ import styles from "./Filter.module.sass";
 const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   const [selectedPrice, setSelectedPrice] = useState("allprices");
   const [selectedSize, setSelectedSize] = useState("XS—S");
-
-  const handlePriceChange = (e) => {
-    setSelectedPrice(e.target.value);
-  };
-
-  const handleSizeChange = (e) => {
-    setSelectedSize(e.target.value);
-  };
-
   const [categories, setCategories] = useState([]);
   const params = qs.parse(window.location.search.substring(1));
 
@@ -26,6 +17,14 @@ const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
       .then((res) => res.json())
       .then((data) => setCategories(data.categories));
   }, [params.menuId]);
+
+  const handlePriceChange = (e) => {
+    setSelectedPrice(e.target.value);
+  };
+
+  const handleSizeChange = (e) => {
+    setSelectedSize(e.target.value);
+  };
 
   return (
     <div className={styles.filter}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ConfirmTheOrderBtnbg from "../../assets/icons/ConfirmTheOrderBtnBg";
 
@@ -12,7 +12,6 @@ const PlacingAnOrder = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [email, setEmail] = useState("");
   const [textarea, setTextarea] = useState("");
-
   const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState(
     "Доставка в отделение почты"
   );
@@ -46,6 +45,18 @@ const PlacingAnOrder = () => {
   const handleShowOrderAccepted = () => {
     setIsOrderAcceptedVisible(true);
   };
+
+  useEffect(() => {
+    if (isOrderAcceptedVisible) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isOrderAcceptedVisible]);
+
   return (
     <div>
       {isOrderAcceptedVisible && (

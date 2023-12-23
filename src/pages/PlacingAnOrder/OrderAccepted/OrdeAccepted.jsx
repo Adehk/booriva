@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
 import CloseOrderAcceptedBtn from "../../../assets/icons/CloseOrderAcceptedBtn";
 import BackToHome from "../../../assets/icons/BackToHome";
@@ -14,9 +13,6 @@ const OrderAccepted = ({
     setIsOrderAcceptedVisible(false);
   };
 
-  useEffect(() => {
-    console.log(isOrderAcceptedVisible);
-  }, [isOrderAcceptedVisible]);
   return (
     <div className={styles.orderAcceptedWrapper}>
       <div

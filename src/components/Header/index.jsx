@@ -16,8 +16,6 @@ const Header = ({
   setIsCartOpen,
   isSearchBarOpen,
   setIsSearchBarOpen,
-  isCartActive,
-  setIsCartActive,
 }) => {
   const toggleSearchBar = () => {
     setIsSearchBarOpen(!isSearchBarOpen);
@@ -33,12 +31,7 @@ const Header = ({
             <div className={styles.rightCol}>
               <Search toggleSearchBar={toggleSearchBar} />
               <Wishlist />
-              <Cart
-                isCartOpen={isCartOpen}
-                setIsCartOpen={setIsCartOpen}
-                isCartActive={isCartActive}
-                setIsCartActive={setIsCartActive}
-              />
+              <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
             </div>
           </div>
           <div className={styles.bottomRow}>

@@ -14,11 +14,13 @@ import SearchBar from "./components/Searchbar";
 import PlacingAnOrder from "./pages/PlacingAnOrder";
 import PageNotFound from "./components/PageNotFound";
 import MobileMenu from "./components/MobileMenu";
+import MobileFilter from "./components/MobileFilter";
 import NavigationBar from "./components/NavigationBar";
 import SearchResults from "./components/SearchResults";
 
 function App() {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
+
   const [activeSubmenuItem, setActiveSubmenuItem] = useState(0);
 
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -28,6 +30,8 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [isCartActive, setIsCartActive] = useState(false);
+
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const [savedData, setSavedData] = useState(
     localStorage.getItem("savedData")
@@ -45,6 +49,18 @@ function App() {
   // useEffect(() => {
   //   localStorage.setItem("savedData", JSON.stringify(savedData));
   // }, [savedData]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen || isCartOpen || isMobileFilterOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }, [isMobileMenuOpen, isCartOpen, isMobileFilterOpen]);
+
+  const closeSearchBar = () => {
+    setIsSearchBarOpen(false);
+  };
 
   return (
     <div>
@@ -66,7 +82,10 @@ function App() {
         setIsCartActive={setIsCartActive}
       />
       {/* <EmptyCart cartOpen={cartOpen} setIsCartOpen={setIsCartOpen} /> */}
-      <SearchBar isSearchBarOpen={isSearchBarOpen} />
+      <SearchBar
+        isSearchBarOpen={isSearchBarOpen}
+        closeSearchBar={closeSearchBar}
+      />
       <MobileMenu
         activeMenuItem={activeMenuItem}
         setActiveMenuItem={setActiveMenuItem}
@@ -74,6 +93,12 @@ function App() {
         setActiveSubmenuItem={setActiveSubmenuItem}
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
+      <MobileFilter
+        activeMenuItem={activeMenuItem}
+        setActiveMenuItem={setActiveMenuItem}
+        isMobileFilterOpen={isMobileFilterOpen}
+        setIsMobileFilterOpen={setIsMobileFilterOpen}
       />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -102,6 +127,8 @@ function App() {
         setIsCartOpen={setIsCartOpen}
         isCartActive={isCartActive}
         setIsCartActive={setIsCartActive}
+        isMobileFilterOpen={isMobileFilterOpen}
+        setIsMobileFilterOpen={setIsMobileFilterOpen}
       />
       <Footer />
     </div>

@@ -1,16 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 
 import ProductCard from "../../../components/ProductCard";
+import SeeAllBtnBg from "../../../assets/icons/SeeAllBtnBg";
 
-import styles from "./YouMightLike.module.sass";
+import styles from "./TopProducts.module.sass";
 
-const YouMightLike = () => {
+const TopProducts = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    fetch(`https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=002`)
+    fetch("https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=000")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -19,17 +21,11 @@ const YouMightLike = () => {
   }, []);
 
   return (
-    <div className={styles.youMightLike}>
-      <div className={styles.heading}>
-        <h1 className={styles.title}>
-          <span>Могут</span> понравится
-        </h1>
-        <p className={styles.subtitle}>Тебе могут понравится</p>
-      </div>
-      <div className={styles.cards}>
+    <div className={styles.topProductsWrapper}>
+      <div className={styles.topProducts}>
         {data.length >= 1 ? (
           data[0].products
-            .slice(0, 4)
+            .slice(0, 3)
             .map(({ id, images, name, price }) => (
               <ProductCard
                 id={id}
@@ -44,9 +40,14 @@ const YouMightLike = () => {
         ) : (
           "Товар не найден"
         )}
+        <div className={styles.banner}></div>
       </div>
+      <Link to="/catalog?menuId=000" className={styles.svgButton}>
+        <SeeAllBtnBg />
+        <span className={styles.buttonText}>Cмотреть все</span>
+      </Link>
     </div>
   );
 };
 
-export default YouMightLike;
+export default TopProducts;

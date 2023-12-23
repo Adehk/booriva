@@ -1,5 +1,4 @@
 import Location from "../../../assets/icons/Location";
-
 import Phone from "../../../assets/icons/Phone";
 
 import styles from "./Contact.module.sass";

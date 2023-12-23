@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom";
-
 import ProductCard from "./ProductCard/ProductCard";
 
-import ProductImg1 from "../../../assets/images/product-img-1.png";
 import ProductImg3 from "../../../assets/images/product-img-3.png";
 
 import styles from "./Cart.module.sass";

@@ -5,6 +5,7 @@ import BoorivaStore from "./BoorivaStore/BoorivaStore";
 import Categories from "./Categories";
 import InfiniteMarquee from "./InfiniteMarquee";
 import NewItems from "./NewItems/NewItems";
+import TopProducts from "./TopProducts/TopProducts";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner />
       <BoorivaStore />
       <InfiniteMarquee />
+      {/* <TopProducts /> */}
       <USP />
       <Insta />
     </div>

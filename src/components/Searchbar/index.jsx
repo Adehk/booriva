@@ -18,12 +18,13 @@ const SearchBar = ({ isSearchBarOpen }) => {
   const handleClearClick = () => {
     setValue("");
     setIsInputActive(false);
+    InputRef.current.focus();
   };
 
   useEffect(() => {
     InputRef.current.focus();
   }, [isSearchBarOpen]);
-  
+
   return (
     <form
       className={`${styles.searchBarWrapper} ${

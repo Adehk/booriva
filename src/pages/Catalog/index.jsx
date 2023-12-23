@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
 import qs from "qs";
 
@@ -18,9 +19,11 @@ const Catalog = ({
 }) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
+  const location = useLocation();
+
   useEffect(() => {
     if (window.location.search) {
-      const params = qs.parse(window.location.search.substring("1"));
+      const params = qs.parse(window.location.search.substring(1));
       if (params.menuId) {
         fetch(
           `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=${params.menuId}`
@@ -42,7 +45,8 @@ const Catalog = ({
           });
       }
     }
-  }, [activeMenuItem, activeSubmenuItem]);
+  }, [location]);
+
   return (
     <div>
       <div className={styles.catalog}>
