@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/booriva/static/css/main.f9b9dccd.css",
-    "main.js": "/booriva/static/js/main.9918bb52.js",
+    "main.css": "/booriva/static/css/main.62b04b5a.css",
+    "main.js": "/booriva/static/js/main.8911a1c2.js",
     "static/media/banner.png": "/booriva/static/media/banner.c0a7230daeb628b7c8f6.png",
     "static/media/boorivagirls-img-1.png": "/booriva/static/media/boorivagirls-img-1.349e6ad92df344378e24.png",
     "static/media/boorivagirls-img-2.png": "/booriva/static/media/boorivagirls-img-2.735360aaf23a122bac9a.png",
@@ -17,7 +17,6 @@
     "static/media/dresses.webp": "/booriva/static/media/dresses.a28fdb6056a94f702c8e.webp",
     "static/media/brandFounder.png": "/booriva/static/media/brandFounder.d480e43382fe5d276077.png",
     "static/media/bottom.png": "/booriva/static/media/bottom.b09e3b21df99268faffe.png",
-    "static/media/product-img-2.png": "/booriva/static/media/product-img-2.66daacf1a103d8fd6e1d.png",
     "static/media/insta-img-3.png": "/booriva/static/media/insta-img-3.deb7c6d8f09dab0a3885.png",
     "static/media/product-img-1.png": "/booriva/static/media/product-img-1.abf1a226b46422fc5d04.png",
     "static/media/product-img-3.png": "/booriva/static/media/product-img-3.db1785b9858d6d73c7b6.png",
@@ -42,11 +41,11 @@
     "static/media/greaterThanSignL.svg": "/booriva/static/media/greaterThanSignL.95de91d32f03fabbc0d5c37495b11e79.svg",
     "static/media/tie.svg": "/booriva/static/media/tie.c055235e8c617cb2154676a82921f893.svg",
     "static/media/prime.svg": "/booriva/static/media/prime.394f1cd83064773368bfa3350eb6546d.svg",
-    "main.f9b9dccd.css.map": "/booriva/static/css/main.f9b9dccd.css.map",
-    "main.9918bb52.js.map": "/booriva/static/js/main.9918bb52.js.map"
+    "main.62b04b5a.css.map": "/booriva/static/css/main.62b04b5a.css.map",
+    "main.8911a1c2.js.map": "/booriva/static/js/main.8911a1c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9b9dccd.css",
-    "static/js/main.9918bb52.js"
+    "static/css/main.62b04b5a.css",
+    "static/js/main.8911a1c2.js"
   ]
 }
