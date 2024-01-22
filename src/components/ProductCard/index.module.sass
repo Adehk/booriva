@@ -1,26 +1,18 @@
-.productCard
+.productCardWrapper
   background: var(--white)
-  // padding: 0 6px
   position: relative
-  // border: 1px solid var(--taffy-pink)
-  @media (min-width: 480px)
-    // padding: 0 12px
-  @media (min-width: 1440px)
-    // padding: 0 20px
 
 .icon
   position: absolute
-  top: 8px
-  right: 12px
+  top: 10px
+  right: 10px
+  cursor: pointer
   @media (min-width: 480px)
-    top: 10px
-    right: 22px
-  @media (min-width: 768px)
-    top: 17px
-    right: 24px
-  @media (min-width: 1440px)
     top: 15px
-    right: 35px
+    right: 15px
+  @media (min-width: 768px)
+    top: 20px
+    right: 20px
   svg
     width: 14px
     height: 12px
@@ -37,7 +29,7 @@
 .productImg img
   display: block
   width: 100%
-  height: 100%
+  height: auto
   object-fit: cover
 
 .info

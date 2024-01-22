@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import CloseCartBtn from "../../assets/icons/CloseBtn";
 import CatInTheBag from "../../assets/icons/CatInTheBag";
@@ -7,9 +8,16 @@ import StartShoppingBtnBg from "../../assets/icons/StartShoppingBtnBg";
 import styles from "./index.module.sass";
 
 const EmptyCart = ({ isCartOpen, setIsCartOpen }) => {
+  const location = useLocation();
   const handleClose = () => {
     setIsCartOpen(false);
   };
+
+  useEffect(() => {
+    if (isCartOpen) {
+      setIsCartOpen(false);
+    }
+  }, [location, setIsCartOpen]);
   return (
     <div className="cartWrapper">
       <div

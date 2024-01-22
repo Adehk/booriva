@@ -5,10 +5,14 @@ import CloseBtn from "../../assets/icons/CloseBtn";
 
 import styles from "./index.module.sass";
 
-const MobileFilter = ({ isMobileFilterOpen, setIsMobileFilterOpen }) => {
+const MobileFilter = ({
+  activeMenuItem,
+  setActiveMenuItem,
+  isMobileFilterOpen,
+  setIsMobileFilterOpen,
+}) => {
   const [selectedPrice, setSelectedPrice] = useState("allprices");
   const [categories, setCategories] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(0);
   const location = useLocation();
 
   const handlePriceChange = (e) => {
@@ -49,9 +53,9 @@ const MobileFilter = ({ isMobileFilterOpen, setIsMobileFilterOpen }) => {
                 className={
                   styles.category +
                   " " +
-                  (id === activeCategory ? styles.active : "")
+                  (id === activeMenuItem ? styles.active : "")
                 }
-                onClick={() => setActiveCategory(id)}
+                onClick={() => setActiveMenuItem(id)}
               >
                 <Link to={`/catalog?menuId=${id}`} className={styles.link}>
                   {name}

@@ -54,11 +54,20 @@
 .cards
   display: grid
   grid-template-columns: repeat(2, 1fr)
+  column-gap: 12px
+  row-gap: 6px
   margin-top: 20px
+  @media (min-width: 480px)
+    column-gap: 24px
+    row-gap: 12px
   @media (min-width: 768px)
-    gap: 20px
+    column-gap: 24px
+    row-gap: 0
   @media (min-width: 1000px)
     grid-template-columns: repeat(3, 1fr)
-    gap: 15px
-  @media (min-width: 1440px)
-    gap: 20px
+
+.loader
+  display: flex !important
+  align-items: center
+  justify-content: center
+  height: 300px

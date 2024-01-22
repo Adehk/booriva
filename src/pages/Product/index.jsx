@@ -11,10 +11,11 @@ import YouMightLike from "./YouMightLike/YouMightLike";
 
 import styles from "./index.module.sass";
 
-const Product = () => {
+const Product = ({ savedData, setSavedData }) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const location = useLocation();
+
   useEffect(() => {
     if (location.search) {
       const params = qs.parse(window.location.search.substring("1"));
@@ -38,8 +39,14 @@ const Product = () => {
         </div>
       ) : (
         <div className={styles.product}>
-          <ProductImgSlider images={data[0].images} />
+          <ProductImgSlider
+            images={data[0].images}
+            id={data[0].id}
+            savedData={savedData}
+            setSavedData={setSavedData}
+          />
           <ProdictInfo
+            id={data[0].id}
             name={data[0].name}
             price={data[0].price}
             desc={data[0].desc}
@@ -48,7 +55,7 @@ const Product = () => {
         </div>
       )}
       <USP />
-      <YouMightLike />
+      <YouMightLike savedData={savedData} setSavedData={setSavedData} />
       <Insta />
     </div>
   );

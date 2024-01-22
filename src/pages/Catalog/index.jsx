@@ -11,7 +11,6 @@ import Insta from "../../components/Insta";
 import styles from "./index.module.sass";
 
 const Catalog = ({
-  activeMenuItem,
   activeSubmenuItem,
   setActiveSubmenuItem,
   savedData,
@@ -28,7 +27,7 @@ const Catalog = ({
         fetch(
           `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=${params.menuId}`
         )
-          .then((res) => res.json())
+          .then((res) => (res.ok ? res.json() : []))
           .then((data) => {
             setData(data);
             setLoader(false);
@@ -38,7 +37,7 @@ const Catalog = ({
         fetch(
           `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${params.categoryId}`
         )
-          .then((res) => res.json())
+          .then((res) => (res.ok ? res.json() : []))
           .then((data) => {
             setData(data);
             setLoader(false);
@@ -72,6 +71,7 @@ const Catalog = ({
                 name={name}
                 price={price}
                 key={id}
+                savedData={savedData}
                 setSavedData={setSavedData}
               />
             ))

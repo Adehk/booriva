@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3181eaf3-9d5c-44be-b98d-26dc69bd560c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/HollowHeart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/icons/HollowHeart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Cart/Cart.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Cart/Cart.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Menu/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Menu/Menu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileFilter/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileFilter/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MobileFilter/index.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MobileFilter/index.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductCard/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductCard/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductCard/index.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductCard/index.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Catalog/Filter/Filter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Catalog/Filter/Filter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Catalog/ProductCard/ProductCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Catalog/ProductCard/ProductCard.module.sass" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Catalog/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Catalog/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/BoorivaStore/BoorivaStore.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/BoorivaStore/BoorivaStore.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/InfiniteMarquee/index.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/InfiniteMarquee/index.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/NewItems/NewItems.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/NewItems/NewItems.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/NewItems/NewItems.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/NewItems/NewItems.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/TopProducts/TopProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/TopProducts/TopProducts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PlacingAnOrder/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PlacingAnOrder/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Product/YouMightLike/YouMightLike.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Product/YouMightLike/YouMightLike.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Wishlist/EmptyWishlist/EmptyWishlist.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Wishlist/EmptyWishlist/EmptyWishlist.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Wishlist/ProductCard/ProductCard.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Wishlist/ProductCard/ProductCard.module.sass" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Wishlist/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Wishlist/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Wishlist/index.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Wishlist/index.module.sass" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2a7F3boqUVk8dHowiKzGXItfykS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3181eaf3-9d5c-44be-b98d-26dc69bd560c" name="Changes" comment="" />
+      <created>1703661521339</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703661521339</updated>
+    </task>
+    <servers />
+  </component>
+</project>

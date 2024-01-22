@@ -23,11 +23,15 @@
   @media (min-width: 1440px)
     font-size: 42px
 
+.form 
+  display: flex
+  flex-direction: column
+  gap: 30px
+
 .size
   display: flex
   flex-direction: column
   gap: 8px
-  margin-bottom: 30px
   @media (min-width: 480px)
     gap: 16px
 
@@ -64,7 +68,7 @@ input[type="radio"] + span
   @media (min-width: 1000px)
     padding: 12px 14px
   @media (min-width: 1440px)
-    padding: 16px 26px
+    padding: 16px 28px
 
 input[type="radio"]:checked + span
   color: var(--taffy-pink)
@@ -98,9 +102,12 @@ input[type="radio"]:checked + span
   fill: var(--red)
 
 .buttonText
+  background-color: transparent
   color: var(--white)
   font-family: var(--secondary-ff)
   font-size: 12px
+  border: none
+  cursor: pointer
   position: absolute
   top: 44%
   left: 48%
@@ -114,6 +121,9 @@ input[type="radio"]:checked + span
   @media (min-width:1440px)
     top: 45%
     left: 47%
+
+.disabled 
+  opacity: 0.4
 
 .description
   font-size: 12px

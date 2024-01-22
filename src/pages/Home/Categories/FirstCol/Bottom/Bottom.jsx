@@ -8,7 +8,7 @@ const Bottoms = () => {
   return (
     <div className={styles.bottoms}>
       <div className={styles.btnWrapper}>
-        <Link to="/catalog" className={styles.svgButton}>
+        <Link to="/catalog?menuId=003" className={styles.svgButton}>
           <BottomBtnBg />
           <span className={styles.buttonText}>Низ</span>
         </Link>

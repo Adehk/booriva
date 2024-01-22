@@ -15,7 +15,6 @@ const PlacingAnOrder = () => {
   const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState(
     "Доставка в отделение почты"
   );
-
   const [isOrderAcceptedVisible, setIsOrderAcceptedVisible] = useState(false);
 
   const handleFirstNameInputChange = (e) => {

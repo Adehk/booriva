@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Thumbs, FreeMode } from "swiper/modules";
 
@@ -10,9 +10,26 @@ import "swiper/scss/free-mode";
 import "swiper/scss/thumbs";
 import styles from "./ProductImgSlider.module.sass";
 
-const ProductImgSlider = ({ images }) => {
+const ProductImgSlider = ({ id, images, savedData, setSavedData }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [descktopThumbsSwiper, setDescktopThumbsSwiper] = useState(null);
+  const [isSaved, setIsSaved] = useState(savedData.includes(id));
+
+  const handleAddProductToWishlistClick = () => {
+    setIsSaved((prevIsSaved) => {
+      const newIsSaved = !prevIsSaved;
+
+      setSavedData((prevSavedData) => {
+        if (newIsSaved) {
+          return [...prevSavedData, id];
+        } else {
+          return prevSavedData.filter((productId) => productId !== id);
+        }
+      });
+
+      return newIsSaved;
+    });
+  };
 
   return (
     <div className={styles.swiperWrapper}>
@@ -31,8 +48,11 @@ const ProductImgSlider = ({ images }) => {
               </SwiperSlide>
             );
           })}
-          <div className={styles.icon}>
-            <HollowHeart />
+          <div
+            className={styles.icon}
+            onClick={handleAddProductToWishlistClick}
+          >
+            <HollowHeart save={isSaved} />
           </div>
         </Swiper>
         <Swiper
@@ -67,8 +87,11 @@ const ProductImgSlider = ({ images }) => {
               </SwiperSlide>
             );
           })}
-          <div className={styles.icon}>
-            <HollowHeart />
+          <div
+            className={styles.icon}
+            onClick={handleAddProductToWishlistClick}
+          >
+            <HollowHeart save={isSaved} />
           </div>
         </Swiper>
         <Swiper

@@ -1,62 +1,67 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import ProductCard from "./ProductCard/ProductCard";
 
-import ProductImg1 from "../../assets/images/product-img-1.png";
-import ProductImg3 from "../../assets/images/product-img-3.png";
 import PlaceAnOrderBtnBg from "../../assets/icons/PlaceAnOrderBtnBg";
 import CloseBtn from "../../assets/icons/CloseBtn";
 
 import styles from "./index.module.sass";
 
-const Cart = ({ isCartOpen, setIsCartOpen, setIsCartActive }) => {
+const Cart = ({
+  isCartOpen,
+  setIsCartOpen,
+  setIsCartActive,
+  arrOfCartProducts,
+  setArrOfCartProducts,
+}) => {
   const location = useLocation();
+  const [products, setProducts] = useState([]);
+  const [price, setPrice] = useState(0);
 
-  const products = [
-    {
-      id: 0,
-      image: ProductImg1,
-      name: "Cвитшoт вставка клетка",
-      size: "S — M",
-      price: 1099,
-    },
-    {
-      id: 1,
-      image: ProductImg3,
-      name: "Бомбер Gone Crazy хаки",
-      size: "S — M",
-      price: 2499,
-    },
-    {
-      id: 2,
-      image: ProductImg1,
-      name: "Cвитшoт вставка клетка",
-      size: "S — M",
-      price: 1099,
-    },
-    {
-      id: 3,
-      image: ProductImg3,
-      name: "Бомбер Gone Crazy хаки",
-      size: "S — M",
-      price: 2499,
-    },
-    {
-      id: 4,
-      image: ProductImg1,
-      name: "Cвитшoт вставка клетка",
-      size: "S — M",
-      price: 1099,
-    },
-    {
-      id: 5,
-      image: ProductImg3,
-      name: "Бомбер Gone Crazy хаки",
-      size: "S — M",
-      price: 2499,
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      let totalPrice = 0;
+      const fetchedProducts = await Promise.all(
+        arrOfCartProducts.map(async (item) => {
+          try {
+            const response = await fetch(
+              `https://6569c6cede53105b0dd7a33a.mockapi.io/product/${item.id}`
+            );
+            const data = await response.json();
+
+            const productPrice = parseFloat(data.price);
+
+            if (!isNaN(productPrice)) {
+              totalPrice += productPrice;
+              const product = {
+                id: data.id,
+                name: data.name,
+                price: productPrice,
+                image: data.images[0],
+                size: item.selectedSize,
+              };
+              return product;
+            } else {
+              console.error("Invalid price for product:", data);
+              return null;
+            }
+          } catch (error) {
+            console.error("Error fetching product data:", error);
+            return null;
+          }
+        })
+      );
+
+      setProducts(fetchedProducts.filter((product) => product !== null));
+      setPrice(totalPrice);
+    };
+
+    if (isCartOpen) {
+      fetchData();
+    }
+  }, [isCartOpen, arrOfCartProducts]);
+
   const handleCartClose = () => {
     setIsCartOpen(false);
     setIsCartActive(false);
@@ -68,6 +73,12 @@ const Cart = ({ isCartOpen, setIsCartOpen, setIsCartActive }) => {
       setIsCartActive(false);
     }
   }, [location, setIsCartOpen, setIsCartActive]);
+
+  const removeFromCart = (productId) => {
+    setArrOfCartProducts((prevProducts) =>
+      prevProducts.filter((product) => product.id !== productId)
+    );
+  };
 
   return (
     <div className="cartWrapper">
@@ -85,18 +96,20 @@ const Cart = ({ isCartOpen, setIsCartOpen, setIsCartActive }) => {
         <div className={styles.products}>
           {products.map(({ id, image, name, size, price }) => (
             <ProductCard
-              key={id}
+              key={id + size}
+              id={id}
               image={image}
               name={name}
               size={size}
               price={price}
+              removeFromCart={removeFromCart}
             />
           ))}
         </div>
         <p className={styles.orderPrice}>
           <span>Cумма заказа:</span>
           <span className={styles.price}>
-            <b>4 998 &#8381;</b>
+            <b>{price} &#8381;</b>
           </span>
         </p>
         <Link to="/checkout" className={styles.svgButton}>

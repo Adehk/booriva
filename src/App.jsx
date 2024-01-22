@@ -17,22 +17,16 @@ import MobileMenu from "./components/MobileMenu";
 import MobileFilter from "./components/MobileFilter";
 import NavigationBar from "./components/NavigationBar";
 import SearchResults from "./components/SearchResults";
+import BackToTopButton from "./components/BackToTopButton";
 
 function App() {
   const [activeMenuItem, setActiveMenuItem] = useState(0);
-
   const [activeSubmenuItem, setActiveSubmenuItem] = useState(0);
-
   const [isCartOpen, setIsCartOpen] = useState(false);
-
   const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const [isCartActive, setIsCartActive] = useState(false);
-
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-
   const [savedData, setSavedData] = useState(
     localStorage.getItem("savedData")
       ? JSON.parse(localStorage.getItem("savedData"))
@@ -40,15 +34,8 @@ function App() {
   );
 
   useEffect(() => {
-    const savedDataFromLocalStorage = localStorage.getItem("savedData");
-    if (savedDataFromLocalStorage) {
-      setSavedData(JSON.parse(savedDataFromLocalStorage));
-    }
-  }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem("savedData", JSON.stringify(savedData));
-  // }, [savedData]);
+    localStorage.setItem("savedData", JSON.stringify(savedData));
+  }, [savedData]);
 
   useEffect(() => {
     if (isMobileMenuOpen || isCartOpen || isMobileFilterOpen) {
@@ -61,6 +48,12 @@ function App() {
   const closeSearchBar = () => {
     setIsSearchBarOpen(false);
   };
+
+  const [arrOfCartProducts, setArrOfCartProducts] = useState(
+    localStorage.getItem("arrOfCartProducts")
+      ? JSON.parse(localStorage.getItem("arrOfCartProducts"))
+      : []
+  );
 
   return (
     <div>
@@ -76,12 +69,18 @@ function App() {
         isCartActive={isCartActive}
         setIsCartActive={setIsCartActive}
       />
-      <Cart
-        isCartOpen={isCartOpen}
-        setIsCartOpen={setIsCartOpen}
-        setIsCartActive={setIsCartActive}
-      />
-      {/* <EmptyCart cartOpen={cartOpen} setIsCartOpen={setIsCartOpen} /> */}
+      {arrOfCartProducts.length > 0 ? (
+        <Cart
+          isCartOpen={isCartOpen}
+          setIsCartOpen={setIsCartOpen}
+          setIsCartActive={setIsCartActive}
+          arrOfCartProducts={arrOfCartProducts}
+          setArrOfCartProducts={setArrOfCartProducts}
+        />
+      ) : (
+        <EmptyCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      )}
+
       <SearchBar
         isSearchBarOpen={isSearchBarOpen}
         closeSearchBar={closeSearchBar}
@@ -101,7 +100,10 @@ function App() {
         setIsMobileFilterOpen={setIsMobileFilterOpen}
       />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<Home savedData={savedData} setSavedData={setSavedData} />}
+        />
         <Route
           path="/catalog"
           element={
@@ -114,8 +116,18 @@ function App() {
             />
           }
         />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/product" element={<Product />} />
+        <Route
+          path="/wishlist"
+          element={
+            <Wishlist savedData={savedData} setSavedData={setSavedData} />
+          }
+        />
+        <Route
+          path="/product"
+          element={
+            <Product savedData={savedData} setSavedData={setSavedData} />
+          }
+        />
         <Route path="/aboutus" element={<BoorivaGirls />} />
         <Route path="/checkout" element={<PlacingAnOrder />} />
         <Route path="*" element={<PageNotFound />} />
@@ -130,6 +142,7 @@ function App() {
         isMobileFilterOpen={isMobileFilterOpen}
         setIsMobileFilterOpen={setIsMobileFilterOpen}
       />
+      <BackToTopButton />
       <Footer />
     </div>
   );

@@ -8,7 +8,7 @@ const Hoodies = () => {
   return (
     <div className={styles.hoodies}>
       <div className={styles.btnWrapper}>
-        <Link to="/catalog" className={styles.svgButton}>
+        <Link to="/catalog?categoryId=ab004" className={styles.svgButton}>
           <HoodiesBtnBg />
           <span className={styles.buttonText}>Худи</span>
         </Link>

@@ -45,3 +45,4 @@ const OrderAccepted = ({
 };
 
 export default OrderAccepted;
+

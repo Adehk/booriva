@@ -29,7 +29,7 @@ const Menu = ({
       {menu.map(({ id, name }) => (
         <li key={id}>
           <Link
-            to={`catalog?menuId=${id}`}
+            to={`/catalog?menuId=${id}`}
             className={
               styles.link + " " + (id === activeMenuItem ? styles.active : "")
             }
@@ -44,7 +44,7 @@ const Menu = ({
                 {submenu.map(({ id, name }) => (
                   <li key={id}>
                     <Link
-                      to={`catalog?categoryId=${id}`}
+                      to={`/catalog?categoryId=${id}`}
                       className={
                         styles.submenuLink +
                         " " +

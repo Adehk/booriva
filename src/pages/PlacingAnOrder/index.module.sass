@@ -194,9 +194,9 @@
     font-size: 14px
   &::placeholder
     color: var(--taffy-pink)
-  &::focus
+  &:focus
     outline: none
-    border: none
+    border: 2px solid var(--taffy-pink)
 
 .deliveryMethod
   margin-bottom: 40px
@@ -283,6 +283,9 @@ textarea
     color: var(--taffy-pink)
   &::-webkit-scrollbar
     display: none
+  &:focus
+    outline: none
+    border: 2px solid var(--taffy-pink)
 
 .total
   display: flex
