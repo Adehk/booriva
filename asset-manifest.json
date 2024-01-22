@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/booriva/static/css/main.62b04b5a.css",
-    "main.js": "/booriva/static/js/main.8911a1c2.js",
+    "main.css": "/booriva/static/css/main.876af4f6.css",
+    "main.js": "/booriva/static/js/main.5aaddecd.js",
     "static/media/banner.png": "/booriva/static/media/banner.c0a7230daeb628b7c8f6.png",
     "static/media/boorivagirls-img-1.png": "/booriva/static/media/boorivagirls-img-1.349e6ad92df344378e24.png",
+    "static/media/dresses.png": "/booriva/static/media/dresses.c41e13d966af62e4f6d1.png",
     "static/media/boorivagirls-img-2.png": "/booriva/static/media/boorivagirls-img-2.735360aaf23a122bac9a.png",
     "static/media/boorivagirls-img-8.png": "/booriva/static/media/boorivagirls-img-8.766387962040039f983c.png",
     "static/media/boorivagirls-img-6.png": "/booriva/static/media/boorivagirls-img-6.e29510f340520d51f19b.png",
@@ -13,22 +14,20 @@
     "static/media/boorivagirls-img-4.png": "/booriva/static/media/boorivagirls-img-4.27ad3d6251bfc75f9af2.png",
     "static/media/boorivagirls-img-7.png": "/booriva/static/media/boorivagirls-img-7.2b76b662ddaaeda9accb.png",
     "static/media/boorivaStore.png": "/booriva/static/media/boorivaStore.b8251b1274435bd3cb65.png",
-    "static/media/topProductsBanner.png": "/booriva/static/media/topProductsBanner.82885ea165e68fd69050.png",
-    "static/media/dresses.webp": "/booriva/static/media/dresses.a28fdb6056a94f702c8e.webp",
-    "static/media/brandFounder.png": "/booriva/static/media/brandFounder.d480e43382fe5d276077.png",
+    "static/media/suits.png": "/booriva/static/media/suits.a6e029810e57fe98a0a6.png",
+    "static/media/tshirts.png": "/booriva/static/media/tshirts.8fda4ad718d5d2dd28c6.png",
     "static/media/bottom.png": "/booriva/static/media/bottom.b09e3b21df99268faffe.png",
+    "static/media/brandFounder.png": "/booriva/static/media/brandFounder.b377521238af7291da0d.png",
     "static/media/insta-img-3.png": "/booriva/static/media/insta-img-3.deb7c6d8f09dab0a3885.png",
-    "static/media/product-img-1.png": "/booriva/static/media/product-img-1.abf1a226b46422fc5d04.png",
     "static/media/product-img-3.png": "/booriva/static/media/product-img-3.db1785b9858d6d73c7b6.png",
-    "static/media/suits.jpg": "/booriva/static/media/suits.21c23afd61fa78170058.jpg",
     "static/media/insta-img-4.png": "/booriva/static/media/insta-img-4.e5e5e6a333a18f92e6f2.png",
     "static/media/insta-img-5.jpg": "/booriva/static/media/insta-img-5.b85b195e7a863197fd0d.jpg",
-    "static/media/tshirts.jpg": "/booriva/static/media/tshirts.a37a341a369e60674bd1.jpg",
-    "static/media/top.jpg": "/booriva/static/media/top.c3053d8c521de91fefb7.jpg",
-    "static/media/hoodies.jpg": "/booriva/static/media/hoodies.1cf7a09a0631aa7565b3.jpg",
+    "static/media/top.jpg": "/booriva/static/media/top.427c7971b2de0837d9d0.jpg",
+    "static/media/topProductsBanner.jpg": "/booriva/static/media/topProductsBanner.8660245f7b822c4a2f4c.jpg",
     "static/media/insta-img-1.jpg": "/booriva/static/media/insta-img-1.b9068441764e0db3428d.jpg",
     "static/media/insta-img-2.jpg": "/booriva/static/media/insta-img-2.a0ff20e645ec42afa023.jpg",
     "static/media/sundaybestrusbyalince.otf": "/booriva/static/media/sundaybestrusbyalince.c4b1c1345bf0ae9d313a.otf",
+    "static/media/hoodies.png": "/booriva/static/media/hoodies.14c7e3135478934553cd.png",
     "static/media/wavyline.svg": "/booriva/static/media/wavyline.a4b76e9a45b387d3b246.svg",
     "static/media/pinkWavyLine.svg": "/booriva/static/media/pinkWavyLine.a1c8e820434be9e2bf87.svg",
     "static/media/squigglyLine.svg": "/booriva/static/media/squigglyLine.388e6561eb24f0b53e307f15c6379866.svg",
@@ -41,11 +40,11 @@
     "static/media/greaterThanSignL.svg": "/booriva/static/media/greaterThanSignL.95de91d32f03fabbc0d5c37495b11e79.svg",
     "static/media/tie.svg": "/booriva/static/media/tie.c055235e8c617cb2154676a82921f893.svg",
     "static/media/prime.svg": "/booriva/static/media/prime.394f1cd83064773368bfa3350eb6546d.svg",
-    "main.62b04b5a.css.map": "/booriva/static/css/main.62b04b5a.css.map",
-    "main.8911a1c2.js.map": "/booriva/static/js/main.8911a1c2.js.map"
+    "main.876af4f6.css.map": "/booriva/static/css/main.876af4f6.css.map",
+    "main.5aaddecd.js.map": "/booriva/static/js/main.5aaddecd.js.map"
   },
   "entrypoints": [
-    "static/css/main.62b04b5a.css",
-    "static/js/main.8911a1c2.js"
+    "static/css/main.876af4f6.css",
+    "static/js/main.5aaddecd.js"
   ]
 }
