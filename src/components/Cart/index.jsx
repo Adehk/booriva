@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setCart } from "../../redux/cart/cartSlice";
+import { BeatLoader } from "react-spinners";
 
 import ProductCard from "./ProductCard/ProductCard";
 
@@ -8,26 +11,24 @@ import CloseBtn from "../../assets/icons/CloseBtn";
 
 import styles from "./index.module.sass";
 
-const Cart = ({
-  isCartOpen,
-  setIsCartOpen,
-  setIsCartActive,
-  arrOfCartProducts,
-  setArrOfCartProducts,
-}) => {
+const Cart = ({ isCartOpen, setIsCartOpen, setIsCartActive }) => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const [products, setProducts] = useState([]);
   const [price, setPrice] = useState(0);
+  const cart = useSelector((state) => state.cart.cart);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       let totalPrice = 0;
       const fetchedProducts = await Promise.all(
-        arrOfCartProducts.map(async (item) => {
+        cart.map(async (item) => {
           try {
             const response = await fetch(
               `https://6569c6cede53105b0dd7a33a.mockapi.io/product/${item.id}`
             );
+            setLoader(false);
             const data = await response.json();
 
             const productPrice = parseFloat(data.price);
@@ -60,7 +61,7 @@ const Cart = ({
     if (isCartOpen) {
       fetchData();
     }
-  }, [isCartOpen, arrOfCartProducts]);
+  }, [isCartOpen, cart]);
 
   const handleCartClose = () => {
     setIsCartOpen(false);
@@ -74,9 +75,14 @@ const Cart = ({
     }
   }, [location, setIsCartOpen, setIsCartActive]);
 
-  const removeFromCart = (productId) => {
-    setArrOfCartProducts((prevProducts) =>
-      prevProducts.filter((product) => product.id !== productId)
+  const removeFromCart = (productId, size) => {
+    dispatch(
+      setCart(
+        cart.filter(
+          (product) =>
+            !(product.id === productId && product.selectedSize === size)
+        )
+      )
     );
   };
 
@@ -93,19 +99,23 @@ const Cart = ({
           <CloseBtn />
         </div>
         <h1 className={styles.title}>Корзина</h1>
-        <div className={styles.products}>
-          {products.map(({ id, image, name, size, price }) => (
-            <ProductCard
-              key={id + size}
-              id={id}
-              image={image}
-              name={name}
-              size={size}
-              price={price}
-              removeFromCart={removeFromCart}
-            />
-          ))}
-        </div>
+        {loader ? (
+          <BeatLoader className={styles.loader} color="#FDA3C4" />
+        ) : (
+          <div className={styles.products}>
+            {products.map(({ id, image, name, size, price }) => (
+              <ProductCard
+                key={id + size}
+                id={id}
+                image={image}
+                name={name}
+                size={size}
+                price={price}
+                removeFromCart={removeFromCart}
+              />
+            ))}
+          </div>
+        )}
         <p className={styles.orderPrice}>
           <span>Cумма заказа:</span>
           <span className={styles.price}>

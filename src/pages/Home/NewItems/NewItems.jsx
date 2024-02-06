@@ -8,7 +8,7 @@ import SeeAllBtnBg from "../../../assets/icons/SeeAllBtnBg";
 
 import styles from "./NewItems.module.sass";
 
-const NewItems = ({ savedData, setSavedData }) => {
+const NewItems = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
 
@@ -38,8 +38,6 @@ const NewItems = ({ savedData, setSavedData }) => {
                 name={name}
                 price={price}
                 key={id}
-                savedData={savedData}
-                setSavedData={setSavedData}
               />
             ))
         ) : loader ? (

@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import Home from "./pages/Home";
 import Header from "./components/Header";
@@ -27,15 +28,7 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCartActive, setIsCartActive] = useState(false);
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
-  const [savedData, setSavedData] = useState(
-    localStorage.getItem("savedData")
-      ? JSON.parse(localStorage.getItem("savedData"))
-      : []
-  );
-
-  useEffect(() => {
-    localStorage.setItem("savedData", JSON.stringify(savedData));
-  }, [savedData]);
+  const cart = useSelector((state) => state.cart.cart);
 
   useEffect(() => {
     if (isMobileMenuOpen || isCartOpen || isMobileFilterOpen) {
@@ -48,12 +41,6 @@ function App() {
   const closeSearchBar = () => {
     setIsSearchBarOpen(false);
   };
-
-  const [arrOfCartProducts, setArrOfCartProducts] = useState(
-    localStorage.getItem("arrOfCartProducts")
-      ? JSON.parse(localStorage.getItem("arrOfCartProducts"))
-      : []
-  );
 
   return (
     <div>
@@ -69,13 +56,11 @@ function App() {
         isCartActive={isCartActive}
         setIsCartActive={setIsCartActive}
       />
-      {arrOfCartProducts.length > 0 ? (
+      {cart.length > 0 ? (
         <Cart
           isCartOpen={isCartOpen}
           setIsCartOpen={setIsCartOpen}
           setIsCartActive={setIsCartActive}
-          arrOfCartProducts={arrOfCartProducts}
-          setArrOfCartProducts={setArrOfCartProducts}
         />
       ) : (
         <EmptyCart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
@@ -100,10 +85,7 @@ function App() {
         setIsMobileFilterOpen={setIsMobileFilterOpen}
       />
       <Routes>
-        <Route
-          path="/"
-          element={<Home savedData={savedData} setSavedData={setSavedData} />}
-        />
+        <Route path="/" element={<Home />} />
         <Route
           path="/catalog"
           element={
@@ -111,23 +93,11 @@ function App() {
               activeMenuItem={activeMenuItem}
               activeSubmenuItem={activeSubmenuItem}
               setActiveSubmenuItem={setActiveSubmenuItem}
-              savedData={savedData}
-              setSavedData={setSavedData}
             />
           }
         />
-        <Route
-          path="/wishlist"
-          element={
-            <Wishlist savedData={savedData} setSavedData={setSavedData} />
-          }
-        />
-        <Route
-          path="/product"
-          element={
-            <Product savedData={savedData} setSavedData={setSavedData} />
-          }
-        />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/product" element={<Product />} />
         <Route path="/aboutus" element={<BoorivaGirls />} />
         <Route path="/checkout" element={<PlacingAnOrder />} />
         <Route path="*" element={<PageNotFound />} />

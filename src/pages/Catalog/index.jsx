@@ -10,12 +10,9 @@ import Insta from "../../components/Insta";
 
 import styles from "./index.module.sass";
 
-const Catalog = ({
-  activeSubmenuItem,
-  setActiveSubmenuItem,
-  savedData,
-  setSavedData,
-}) => {
+// ... (other imports)
+
+const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const location = useLocation();
@@ -32,8 +29,7 @@ const Catalog = ({
             setData(data);
             setLoader(false);
           });
-      }
-      if (params.categoryId) {
+      } else if (params.categoryId) {
         fetch(
           `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${params.categoryId}`
         )
@@ -43,6 +39,13 @@ const Catalog = ({
             setLoader(false);
           });
       }
+    } else {
+      fetch("https://6569c6cede53105b0dd7a33a.mockapi.io/product")
+        .then((res) => (res.ok ? res.json() : []))
+        .then((data) => {
+          setData(data);
+          setLoader(false);
+        });
     }
   }, [location]);
 
@@ -64,17 +67,27 @@ const Catalog = ({
         />
         <div className={styles.cards}>
           {data.length >= 1 ? (
-            data[0].products.map(({ id, images, name, price }) => (
-              <ProductCard
-                id={id}
-                images={images}
-                name={name}
-                price={price}
-                key={id}
-                savedData={savedData}
-                setSavedData={setSavedData}
-              />
-            ))
+            data[0].products ? (
+              data[0].products.map(({ id, images, name, price }) => (
+                <ProductCard
+                  id={id}
+                  images={images}
+                  name={name}
+                  price={price}
+                  key={id}
+                />
+              ))
+            ) : (
+              data.map(({ id, images, name, price }) => (
+                <ProductCard
+                  id={id}
+                  images={images}
+                  name={name}
+                  price={price}
+                  key={id}
+                />
+              ))
+            )
           ) : loader ? (
             <BeatLoader className={styles.loader} color="#FDA3C4" />
           ) : (

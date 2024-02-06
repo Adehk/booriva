@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { BeatLoader } from "react-spinners";
+import { setSavedData } from "../../redux/savedData/savedDataSlice";
 
 import Insta from "../../components/Insta";
 import USP from "../../components/USP";
@@ -8,16 +10,20 @@ import ProductCard from "../../components/ProductCard";
 
 import styles from "./index.module.sass";
 
-const Wishlist = ({ savedData, setSavedData }) => {
+const Wishlist = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
+  const savedData = useSelector((state) => state.savedData.savedData);
+  const dispatch = useDispatch();
 
   const handleRemoveProductFromWishlist = (productId) => {
-    setSavedData((prev) => {
-      const updatedData = prev.filter((id) => id !== productId);
-      localStorage.setItem("savedData", JSON.stringify(updatedData));
-      return updatedData;
-    });
+    dispatch(
+      setSavedData((prev) => {
+        const updatedData = prev.filter((id) => id !== productId);
+        localStorage.setItem("savedData", JSON.stringify(updatedData));
+        return updatedData;
+      })
+    );
   };
 
   useEffect(() => {

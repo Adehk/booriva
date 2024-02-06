@@ -5,7 +5,7 @@ import qs from "qs";
 import styles from "./Filter.module.sass";
 
 const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
-  const [selectedPrice, setSelectedPrice] = useState("allprices");
+  const [selectedPrice, setSelectedPrice] = useState("desktopAllPrices");
   const [categories, setCategories] = useState([]);
   const params = qs.parse(window.location.search.substring(1));
 
@@ -54,57 +54,57 @@ const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
           <div className={styles.option}>
             <input
               type="radio"
-              id="allprices"
+              id="desktopAllPrices"
               name="price"
-              value="allprices"
-              checked={selectedPrice === "allprices"}
+              value="desktopAllPrices"
+              checked={selectedPrice === "desktopAllPrices"}
               onChange={handlePriceChange}
             />
-            <label htmlFor="allprices">Все цены</label>
+            <label htmlFor="desktopAllPrices">Все цены</label>
           </div>
           <div className={styles.option}>
             <input
               type="radio"
-              id="upto500"
+              id="desktopUpto500"
               name="price"
-              value="upto500"
-              checked={selectedPrice === "upto500"}
+              value="desktopUpto500"
+              checked={selectedPrice === "desktopUpto500"}
               onChange={handlePriceChange}
             />
-            <label htmlFor="upto500">до 500</label>
+            <label htmlFor="desktopUpto500">до 500</label>
           </div>
           <div className={styles.option}>
             <input
               type="radio"
-              id="from500to1000"
+              id="desktopFrom500to1000"
               name="price"
-              value="from500to1000"
-              checked={selectedPrice === "from500to1000"}
+              value="desktopFrom500to1000"
+              checked={selectedPrice === "desktopFrom500to1000"}
               onChange={handlePriceChange}
             />
-            <label htmlFor="from500to1000">500 — 1000</label>
+            <label htmlFor="desktopFrom500to1000">500 — 1000</label>
           </div>
           <div className={styles.option}>
             <input
               type="radio"
-              id="from1000to1500"
+              id="desktopFrom1000to1500"
               name="price"
-              value="from1000to1500"
-              checked={selectedPrice === "from1000to1500"}
+              value="desktopFrom1000to1500"
+              checked={selectedPrice === "desktopFrom1000to1500"}
               onChange={handlePriceChange}
             />
-            <label htmlFor="from1000to1500">1000 — 1500</label>
+            <label htmlFor="desktopFrom1000to1500">1000 — 1500</label>
           </div>
           <div className={styles.option}>
             <input
               type="radio"
-              id="from1500"
+              id="desktopFrom1500"
               name="price"
-              value="from1500"
-              checked={selectedPrice === "from1500"}
+              value="desktopFrom1500"
+              checked={selectedPrice === "desktopFrom1500"}
               onChange={handlePriceChange}
             />
-            <label htmlFor="from1500">от 1500</label>
+            <label htmlFor="desktopFrom1500">от 1500</label>
           </div>
         </form>
       </div>

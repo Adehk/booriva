@@ -7,15 +7,15 @@ import InfiniteMarquee from "./InfiniteMarquee";
 import NewItems from "./NewItems/NewItems";
 import TopProducts from "./TopProducts/TopProducts";
 
-const Home = ({ savedData, setSavedData }) => {
+const Home = () => {
   return (
     <div>
       <Categories />
-      <NewItems savedData={savedData} setSavedData={setSavedData} />
+      <NewItems/>
       <Banner />
       <BoorivaStore />
       <InfiniteMarquee />
-      <TopProducts savedData={savedData} setSavedData={setSavedData} />
+      <TopProducts/>
       <USP />
       <Insta />
     </div>

@@ -18,11 +18,11 @@ const BoorivaStore = () => {
       </h1>
       <div className={styles.info}>
         <p>
-          г.Киев, <br /> ул. Нижний вал, 37
+          г.Грозный, <br /> просп. Кадырова, 216
         </p>
         <br />
         <p>
-          Ежедневно <br />с 11:00 до 21:00
+          Ежедневно <br />с 09:00 до 21:00
         </p>
       </div>
       <div className={styles.boorivaStoreImg}>

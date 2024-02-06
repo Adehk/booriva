@@ -1,19 +1,29 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setSavedData } from "../../redux/savedData/savedDataSlice";
+
 import HollowHeart from "../../assets/icons/HollowHeart";
 import styles from "./index.module.sass";
 
-const ProductCard = ({ id, images, name, price, savedData, setSavedData }) => {
-  const isSaved = savedData.includes(id);
+const ProductCard = ({ id, images, name, price }) => {
+  const savedData = useSelector((state) => state.savedData.savedData);
+  const [isSaved, setIsSaved] = useState(savedData.includes(id));
+  const dispatch = useDispatch();
 
   const handleAddProductToWishlistClick = () => {
-    setSavedData((prev) => {
-      if (prev.includes(id)) {
-        return prev.filter((productId) => productId !== id);
-      } else {
-        return [...prev, id];
-      }
-    });
+    dispatch(
+      setSavedData(
+        savedData.includes(id)
+          ? savedData.filter((productId) => productId !== id)
+          : [...savedData, id]
+      )
+    );
   };
+
+  useEffect(() => {
+    setIsSaved(savedData.includes(id));
+  }, [savedData]);
 
   return (
     <div className={styles.productCardWrapper}>

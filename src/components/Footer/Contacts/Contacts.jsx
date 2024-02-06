@@ -7,15 +7,21 @@ const ContactInfo = () => {
       <h1 className={styles.title + " " + styles.hidden}>НАШ АДРЕС</h1>
       <ul className={styles.list}>
         <li>
-          г.Киев, <span>ул. Нижний Вал, 37</span>
+          <a
+            href="https://maps.app.goo.gl/RhDdVt9EyjTtfJFe9"
+            target="_blank"
+            className={styles.link}
+          >
+            г.Грозный, <span>просп. Кадырова, 216</span>
+          </a>
         </li>
-        <li className={styles.hidden}>Пн — Вс: с 11:00 до 21:00</li>
+        <li className={styles.hidden}>Пн — Вс: с 09:00 до 21:00</li>
         <li className={styles.item}>
-          Ежедневно: <span>с 11:00 до 21:00</span>
+          Ежедневно: <span>с 09:00 до 21:00</span>
         </li>
         <li className={styles.item}>
-          <a href="tel:+380638433471" className={styles.phoneNumber}>
-            +38 063 843 34 71
+          <a href="tel:+79294444095" className={styles.link}>
+            +7 &#40;929&#41; 4444 095
           </a>
         </li>
       </ul>

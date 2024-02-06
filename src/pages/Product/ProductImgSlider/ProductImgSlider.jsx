@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Thumbs, FreeMode } from "swiper/modules";
+import { useDispatch, useSelector } from "react-redux";
+import { setSavedData } from "../../../redux/savedData/savedDataSlice";
 
 import HollowHeart from "../../../assets/icons/HollowHeart";
 
@@ -10,25 +12,22 @@ import "swiper/scss/free-mode";
 import "swiper/scss/thumbs";
 import styles from "./ProductImgSlider.module.sass";
 
-const ProductImgSlider = ({ id, images, savedData, setSavedData }) => {
+const ProductImgSlider = ({ id, images }) => {
+  const dispatch = useDispatch();
+  const savedData = useSelector((state) => state.savedData.savedData);
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [descktopThumbsSwiper, setDescktopThumbsSwiper] = useState(null);
-  const [isSaved, setIsSaved] = useState(savedData.includes(id));
+  const isSaved = savedData.includes(id);
 
   const handleAddProductToWishlistClick = () => {
-    setIsSaved((prevIsSaved) => {
-      const newIsSaved = !prevIsSaved;
-
-      setSavedData((prevSavedData) => {
-        if (newIsSaved) {
-          return [...prevSavedData, id];
-        } else {
-          return prevSavedData.filter((productId) => productId !== id);
-        }
-      });
-
-      return newIsSaved;
-    });
+    const newIsSaved = !isSaved;
+    dispatch(
+      setSavedData(
+        newIsSaved
+          ? [...savedData, id]
+          : savedData.filter((productId) => productId !== id)
+      )
+    );
   };
 
   return (

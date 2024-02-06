@@ -6,17 +6,18 @@ import styles from "./Contact.module.sass";
 const Contact = () => {
   return (
     <div className={styles.contactInfo}>
-      <div
-        href="tel:+380638433471"
+      <a
+        href="https://maps.app.goo.gl/RhDdVt9EyjTtfJFe9"
+        target="_blank"
         className={styles.address + " " + styles.hidden}
       >
         <Location />
-        Киев, Нижний вал, 37
-      </div>
+        Грозный, Кадырова, 216
+      </a>
 
-      <a href="tel:+380638433471" className={styles.phoneNumber}>
+      <a href="tel:+79294444095" className={styles.phoneNumber}>
         <Phone />
-        +38 063 843 34 71
+        +7 &#40;929&#41; 4444 095
       </a>
     </div>
   );

@@ -11,7 +11,7 @@ import YouMightLike from "./YouMightLike/YouMightLike";
 
 import styles from "./index.module.sass";
 
-const Product = ({ savedData, setSavedData }) => {
+const Product = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const location = useLocation();
@@ -42,8 +42,6 @@ const Product = ({ savedData, setSavedData }) => {
           <ProductImgSlider
             images={data[0].images}
             id={data[0].id}
-            savedData={savedData}
-            setSavedData={setSavedData}
           />
           <ProdictInfo
             id={data[0].id}
@@ -55,7 +53,7 @@ const Product = ({ savedData, setSavedData }) => {
         </div>
       )}
       <USP />
-      <YouMightLike savedData={savedData} setSavedData={setSavedData} />
+      <YouMightLike/>
       <Insta />
     </div>
   );

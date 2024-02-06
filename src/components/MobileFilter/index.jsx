@@ -11,7 +11,7 @@ const MobileFilter = ({
   isMobileFilterOpen,
   setIsMobileFilterOpen,
 }) => {
-  const [selectedPrice, setSelectedPrice] = useState("allprices");
+  const [selectedPrice, setSelectedPrice] = useState("mobileAllPrices");
   const [categories, setCategories] = useState([]);
   const location = useLocation();
 
@@ -70,57 +70,57 @@ const MobileFilter = ({
             <div className={styles.option}>
               <input
                 type="radio"
-                id="allprices"
+                id="mobileAllPrices"
                 name="price"
-                value="allprices"
-                checked={selectedPrice === "allprices"}
+                value="mobileAllPrices"
+                checked={selectedPrice === "mobileAllPrices"}
                 onChange={handlePriceChange}
               />
-              <label htmlFor="allprices">Все цены</label>
+              <label htmlFor="mobileAllPrices">Все цены</label>
             </div>
             <div className={styles.option}>
               <input
                 type="radio"
-                id="upto500"
+                id="mobileUpto500"
                 name="price"
-                value="upto500"
-                checked={selectedPrice === "upto500"}
+                value="mobileUpto500"
+                checked={selectedPrice === "mobileUpto500"}
                 onChange={handlePriceChange}
               />
-              <label htmlFor="upto500">до 500</label>
+              <label htmlFor="mobileUpto500">до 500</label>
             </div>
             <div className={styles.option}>
               <input
                 type="radio"
-                id="from500to1000"
+                id="mobileFrom500to1000"
                 name="price"
-                value="from500to1000"
-                checked={selectedPrice === "from500to1000"}
+                value="mobileFrom500to1000"
+                checked={selectedPrice === "mobileFrom500to1000"}
                 onChange={handlePriceChange}
               />
-              <label htmlFor="from500to1000">500 — 1000</label>
+              <label htmlFor="mobileFrom500to1000">500 — 1000</label>
             </div>
             <div className={styles.option}>
               <input
                 type="radio"
-                id="from1000to1500"
+                id="mobileFrom1000to1500"
                 name="price"
-                value="from1000to1500"
-                checked={selectedPrice === "from1000to1500"}
+                value="mobileFrom1000to1500"
+                checked={selectedPrice === "mobileFrom1000to1500"}
                 onChange={handlePriceChange}
               />
-              <label htmlFor="from1000to1500">1000 — 1500</label>
+              <label htmlFor="mobileFrom1000to1500">1000 — 1500</label>
             </div>
             <div className={styles.option}>
               <input
                 type="radio"
-                id="from1500"
+                id="mobileFrom1500"
                 name="price"
-                value="from1500"
-                checked={selectedPrice === "from1500"}
+                value="mobileFrom1500"
+                checked={selectedPrice === "mobileFrom1500"}
                 onChange={handlePriceChange}
               />
-              <label htmlFor="from1500">от 1500</label>
+              <label htmlFor="mobileFrom1500">от 1500</label>
             </div>
           </form>
         </div>

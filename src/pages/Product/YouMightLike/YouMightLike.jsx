@@ -5,7 +5,7 @@ import ProductCard from "../../../components/ProductCard";
 
 import styles from "./YouMightLike.module.sass";
 
-const YouMightLike = ({ savedData, setSavedData }) => {
+const YouMightLike = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
 
@@ -37,8 +37,6 @@ const YouMightLike = ({ savedData, setSavedData }) => {
                 name={name}
                 price={price}
                 key={id}
-                savedData={savedData}
-                setSavedData={setSavedData}
               />
             ))
         ) : loader ? (

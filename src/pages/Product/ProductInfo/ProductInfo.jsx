@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import AddToCartBtnBg from "../../../assets/icons/AddToCartBtnBg";
 
@@ -7,7 +7,7 @@ import styles from "./ProductInfo.module.sass";
 const ProdictInfo = ({ id, name, price, desc, details }) => {
   const [selectedSize, setSelectedSize] = useState("XS—S");
   const [btnText, setBtnText] = useState("В корзину");
-  
+
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
   };

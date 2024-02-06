@@ -74,8 +74,14 @@ ul, li
   height: 100vh
   overflow: hidden
 
-.heartIcon:hover svg path
-  fill: var(--red)
+// .heartIcon svg
+//   transition: fill 1s ease
 
-svg
-  transition: all 0.3s ease
+// .heartIcon:hover svg path:nth-child(1)
+//   fill: var(--red)
+
+.heartIcon path
+  transition: fill 1s ease
+
+.heartIcon:hover path:nth-child(1)
+  fill: var(--red)
