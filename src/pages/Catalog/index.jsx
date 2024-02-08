@@ -10,8 +10,6 @@ import Insta from "../../components/Insta";
 
 import styles from "./index.module.sass";
 
-// ... (other imports)
-
 const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -26,6 +24,7 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
         )
           .then((res) => (res.ok ? res.json() : []))
           .then((data) => {
+            console.log("Data received from server:", data);
             setData(data);
             setLoader(false);
           });
@@ -35,6 +34,7 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
         )
           .then((res) => (res.ok ? res.json() : []))
           .then((data) => {
+            console.log("Data received from server:", data);
             setData(data);
             setLoader(false);
           });
