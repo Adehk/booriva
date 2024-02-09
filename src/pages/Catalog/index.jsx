@@ -9,6 +9,7 @@ import ProductCard from "../../components/ProductCard";
 import Insta from "../../components/Insta";
 
 import styles from "./index.module.sass";
+import SquigglyLine from "../../assets/icons/SquigglyLine";
 
 const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   const [data, setData] = useState([]);
@@ -24,7 +25,6 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
         )
           .then((res) => (res.ok ? res.json() : []))
           .then((data) => {
-            console.log("Data received from server:", data);
             setData(data);
             setLoader(false);
           });
@@ -34,7 +34,6 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
         )
           .then((res) => (res.ok ? res.json() : []))
           .then((data) => {
-            console.log("Data received from server:", data);
             setData(data);
             setLoader(false);
           });
@@ -57,9 +56,12 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
           <h1 className={styles.category}>
             {data.length >= 1 ? data[0].menuName : ""}
           </h1>
-          <p className={styles.subcategory}>
-            {data.length >= 1 ? data[0].categoryName : ""}
-          </p>
+          {data.length >= 1 && data[0].categoryName && (
+            <p className={styles.subcategory}>
+              {data[0].categoryName}
+              <SquigglyLine />
+            </p>
+          )}
         </div>
         <Filter
           activeSubmenuItem={activeSubmenuItem}

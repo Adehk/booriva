@@ -14,7 +14,9 @@ const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
       `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories/a${params.menuId}`
     )
       .then((res) => res.json())
-      .then((data) => setCategories(data.categories));
+      .then((data) => {
+        setCategories(data.categories);
+      });
   }, [params.menuId]);
 
   const handlePriceChange = (e) => {
